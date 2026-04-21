@@ -59,6 +59,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 #admin-btn:hover{color:var(--amber);border-color:var(--amber);}
 #admin-btn.active{background:var(--amber-bg);border-color:var(--amber-dim);color:var(--amber);}
 
+/* Hamburger menu button — hidden on desktop */
+#menu-btn{display:none;background:transparent;border:0.5px solid var(--border2);border-radius:8px;width:34px;height:30px;align-items:center;justify-content:center;cursor:pointer;color:var(--text);padding:0;transition:border-color .15s,background .15s;}
+#menu-btn:hover{border-color:var(--text2);}
+#menu-btn .icon-close{display:none;}
+#menu-btn.open{background:var(--surface2);border-color:var(--border3);}
+#menu-btn.open .icon-menu{display:none;}
+#menu-btn.open .icon-close{display:block;}
+
 /* ─── ADMIN OVERLAY ─── */
 #admin-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(14,15,13,.9);backdrop-filter:blur(8px);z-index:200;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;}
 #admin-overlay.show{opacity:1;visibility:visible;}
@@ -117,11 +125,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .home-stat-label{font-size:11px;color:var(--text2);line-height:1.4;}
 
 @media(max-width:760px){
-  .home-h1{font-size:clamp(34px,8vw,48px);}
-  .home-manifesto{padding:28px 22px;}
-  .home-manifesto-text{font-size:17px;}
+  .home-manifesto{padding:26px 20px;}
+  .home-manifesto-text{font-size:15px;}
+  .home-stat{padding:16px 12px;}
+  .home-stat-val{font-size:19px;}
+}
+@media(max-width:460px){
   .home-stats{grid-template-columns:1fr;}
-  .home-stat{padding:20px;}
+  .home-stat{padding:16px 18px;}
 }
 
 /* ─── SHARED COMPONENTS ─── */
@@ -274,10 +285,95 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 .page-footer{text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.08em;padding-top:20px;}
 
-@media(max-width:640px){
-  .topbar{padding:0 16px;}
-  .nav-btn{font-size:9px;padding:6px 10px;}
-  .page{padding:32px 16px 80px;}
+@media(max-width:720px){
+  /* Topbar: single row, hamburger menu */
+  .topbar{
+    height:52px;
+    padding:0 14px;
+    gap:12px;
+  }
+  .topbar-logo{order:1;font-size:11px;}
+  .topbar-right{order:2;margin-left:auto;gap:8px;}
+  .topbar-meta{display:none;}
+  #admin-btn{font-size:9px;padding:4px 9px;}
+  #menu-btn{display:flex;}
+
+  /* Nav becomes dropdown panel */
+  .nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    background:var(--surface);
+    border-bottom:0.5px solid var(--border2);
+    padding:8px;
+    gap:2px;
+    display:none;
+    z-index:99;
+    box-shadow:0 12px 32px rgba(0,0,0,0.45);
+    max-height:calc(100vh - 52px);
+    overflow-y:auto;
+  }
+  .nav.open{display:flex;}
+  .nav-btn{
+    width:100%;
+    text-align:left;
+    padding:13px 16px;
+    font-size:11px;
+    border-radius:8px;
+  }
+
+  /* Hide tower image on mobile */
+  .home-right{display:none;}
+  .home-wrapper{grid-template-columns:1fr;gap:0;}
+
+  /* Page padding */
+  .page{padding:24px 16px 64px;}
+
+  /* Home hero */
+  .home-hero{padding:20px 0 32px;}
+  .home-h1{font-size:clamp(30px,7vw,40px);margin-bottom:20px;}
+  .home-lead{font-size:15px;margin-bottom:24px;}
+
+  /* Widget headers */
+  .widget-hdr{padding:14px 16px;}
+  .widget-title{font-size:12px;}
+  .widget-body{padding:16px;}
+
+  /* Section titles */
+  .section-title{font-size:20px;}
+  .section-desc{font-size:12px;margin-bottom:24px;}
+
+  /* Checklist: tighter */
+  .cl-item{padding:10px 14px;gap:10px;}
+  .cl-text{font-size:12.5px;}
+  .cl-tag{display:none;}
+
+  /* Inner tabs: scrollable */
+  .itab-bar{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;}
+  .itab-bar::-webkit-scrollbar{display:none;}
+  .itab-btn{flex-shrink:0;}
+
+  /* Phase cards tighter */
+  .phase-card{padding:12px 14px;}
+  .phase-title{font-size:12px;}
+  .phase-sub{font-size:11px;}
+
+  /* Model cards */
+  .model-card{padding:20px 18px;}
+
+  /* Lock screen */
+  .lock-card{padding:32px 28px;margin:16px;}
+  .lock-title{font-size:20px;}
+}
+
+/* Very narrow phones */
+@media(max-width:400px){
+  .topbar-logo{font-size:10px;letter-spacing:.14em;}
+  .home-h1{font-size:28px;}
+  .home-model{max-height:220px;}
+  .phase-row{flex-direction:column;}
 }
 </style>
 </head>
@@ -321,6 +417,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="topbar-right">
       <div class="topbar-meta">İzmir · 2026</div>
       <button id="admin-btn" onclick="handleAdmin()">Düzenle</button>
+      <button id="menu-btn" onclick="toggleMenu()" aria-label="Menü">
+        <svg class="icon-menu" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </div>
 
@@ -829,7 +929,26 @@ function nav(name, btn){
   document.getElementById('view-'+name).classList.add('active');
   if(btn) btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  closeMenu();
 }
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){
+  document.querySelector('.nav').classList.toggle('open');
+  document.getElementById('menu-btn').classList.toggle('open');
+}
+function closeMenu(){
+  document.querySelector('.nav').classList.remove('open');
+  document.getElementById('menu-btn').classList.remove('open');
+}
+document.addEventListener('click',(e)=>{
+  const nav=document.querySelector('.nav');
+  const btn=document.getElementById('menu-btn');
+  if(!nav||!btn)return;
+  if(nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)){
+    closeMenu();
+  }
+});
 
 /* ── INNER TABS ── */
 function itab(prefix, name, btn){
