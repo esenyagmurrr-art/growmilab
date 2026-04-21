@@ -76,35 +76,53 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .view{display:none;}.view.active{display:block;}
 
 /* ─── HOME ─── */
-.home-hero{padding:72px 0 56px;border-bottom:0.5px solid var(--border);margin-bottom:48px;}
+/* ─── HOME ─── */
+.home-wrapper{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:32px;align-items:start;}
+.home-left{min-width:0;display:flex;flex-direction:column;gap:24px;}
+.home-right{position:sticky;top:72px;}
+.home-model{position:relative;aspect-ratio:1/1.3;overflow:hidden;display:flex;align-items:center;justify-content:center;perspective:1400px;}
+.home-model img{max-width:100%;max-height:100%;object-fit:contain;transform-origin:center center;will-change:transform;pointer-events:none;user-select:none;-webkit-user-drag:none;}
+@media(max-width:760px){
+  .home-wrapper{grid-template-columns:1fr;gap:16px;}
+  .home-right{position:relative;top:auto;order:-1;}
+  .home-model{aspect-ratio:1/0.75;max-height:340px;}
+}
+.home-hero{padding:72px 0 56px;border-bottom:0.5px solid var(--border);margin-bottom:0;}
 .home-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
 .home-eyebrow::before{content:'';width:20px;height:0.5px;background:var(--green);}
-.home-h1{font-size:clamp(36px,6vw,60px);font-weight:300;line-height:1.12;letter-spacing:-.02em;margin-bottom:24px;}
+.home-h1{font-size:clamp(32px,5vw,42px);font-weight:300;line-height:1.12;letter-spacing:-.02em;margin-bottom:24px;}
 .home-h1 em{font-style:normal;color:var(--green);}
-.home-lead{font-size:16px;color:var(--text2);line-height:1.75;max-width:480px;margin-bottom:36px;}
+.home-lead{font-size:16px;color:var(--text2);line-height:1.75;max-width:480px;margin-bottom:32px;}
+
 .home-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .home-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:99px;border:0.5px solid var(--border2);color:var(--text3);}
 
-.home-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;}
-@media(max-width:600px){.home-cards{grid-template-columns:1fr;}}
-.home-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;cursor:pointer;transition:border-color .2s,background .2s;}
+.home-cards{display:grid;grid-template-columns:1fr;gap:10px;}
+.home-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;cursor:pointer;transition:border-color .2s,background .2s;display:grid;grid-template-columns:36px 1fr;column-gap:16px;row-gap:3px;}
 .home-card:hover{border-color:var(--border2);background:var(--surface2);}
-.home-card-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.home-card-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
-.home-card-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;}
-.home-card-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+.home-card-icon{grid-column:1;grid-row:1/span 3;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;align-self:center;border:0.5px solid transparent;}
+.home-card-label{grid-column:2;grid-row:1;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
+.home-card-title{grid-column:2;grid-row:2;font-size:14px;font-weight:500;color:var(--text);}
+.home-card-desc{grid-column:2;grid-row:3;font-size:12px;color:var(--text2);line-height:1.55;}
 
-.home-manifesto{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-xl);padding:40px;margin-bottom:16px;}
-.home-manifesto-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:20px;}
-.home-manifesto-text{font-size:18px;font-weight:300;line-height:1.7;color:var(--text2);}
+.home-manifesto{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-xl);padding:32px;}
+.home-manifesto-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
+.home-manifesto-text{font-size:16px;font-weight:300;line-height:1.7;color:var(--text2);}
 .home-manifesto-text strong{color:var(--text);font-weight:400;}
 
 .home-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
-@media(max-width:500px){.home-stats{grid-template-columns:1fr;}}
-.home-stat{background:var(--surface);padding:24px 20px;}
-.home-stat-val{font-family:'DM Mono',monospace;font-size:28px;font-weight:300;color:var(--text);margin-bottom:6px;letter-spacing:-.02em;}
-.home-stat-val span{font-size:16px;color:var(--green);}
-.home-stat-label{font-size:12px;color:var(--text2);}
+.home-stat{background:var(--surface);padding:18px 16px;}
+.home-stat-val{font-family:'DM Mono',monospace;font-size:22px;font-weight:300;color:var(--text);margin-bottom:4px;letter-spacing:-.02em;}
+.home-stat-val span{font-size:13px;color:var(--green);}
+.home-stat-label{font-size:11px;color:var(--text2);line-height:1.4;}
+
+@media(max-width:760px){
+  .home-h1{font-size:clamp(34px,8vw,48px);}
+  .home-manifesto{padding:28px 22px;}
+  .home-manifesto-text{font-size:17px;}
+  .home-stats{grid-template-columns:1fr;}
+  .home-stat{padding:20px;}
+}
 
 /* ─── SHARED COMPONENTS ─── */
 .section-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
@@ -221,18 +239,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .callout strong{font-weight:600;}
 
 /* MODEL page */
-.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
-@media(max-width:560px){.model-grid{grid-template-columns:1fr;}}
+.model-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;}
 .model-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:border-color .2s;}
 .model-card:hover{border-color:var(--border2);}
 .model-card.full{grid-column:1/-1;}
-.model-card-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:0.5px solid var(--border2);}
-.model-card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
-.model-card-title{font-size:16px;font-weight:400;margin-bottom:8px;}
-.model-card-desc{font-size:12px;color:var(--text2);line-height:1.7;}
+.model-card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;}
+.model-card-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:0.5px solid var(--border2);flex-shrink:0;margin-bottom:0;}
+.model-card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.model-card-title{font-size:16px;font-weight:400;margin-bottom:0;color:var(--text);}
+.model-card-desc{font-size:13px;color:var(--text2);line-height:1.7;}
 .model-card-items{margin-top:14px;display:flex;flex-direction:column;gap:6px;}
 .model-card-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text2);}
 .model-card-item::before{content:'→';color:var(--text3);flex-shrink:0;font-family:'DM Mono',monospace;font-size:11px;margin-top:1px;}
+
+/* Kol 2 sub-formats */
+.subformat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:18px;border-top:0.5px solid var(--border);}
+@media(max-width:560px){.subformat-grid{grid-template-columns:1fr;}}
+.subformat{background:var(--surface2);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px 16px;}
+.subformat-hdr{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.subformat-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:0.5px solid var(--border2);}
+.subformat-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1px;}
+.subformat-title{font-size:13px;font-weight:500;color:var(--text);}
+.subformat-desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px;}
+.subformat-items{display:flex;flex-direction:column;gap:3px;}
+.subformat-item{font-size:11px;color:var(--text2);line-height:1.5;display:flex;gap:6px;}
+.subformat-item::before{content:'·';color:var(--text3);flex-shrink:0;}
 
 /* placeholder for empty sections */
 .empty-state{border:0.5px dashed var(--border2);border-radius:var(--radius-lg);padding:48px 32px;text-align:center;}
@@ -297,73 +328,83 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
     <!-- ══════════ HOME ══════════ -->
     <div id="view-home" class="view active">
+      <div class="home-wrapper">
+        <div class="home-left">
 
-      <div class="home-hero">
-        <div class="home-eyebrow">Topraksız tarım girişimi</div>
-        <h1 class="home-h1">Toprak olmadan<br>büyüyen bir <em>gelecek</em></h1>
-        <p class="home-lead">Hidroponik sistemlerden yetiştirilen ürünlerin satışı ile kendi Ar-Ge tasarımı sistemlerin üretim ve dağıtımını birleştiren hibrit bir girişim modeli.</p>
-        <div class="home-tags">
-          <span class="home-tag">Hidroponik</span>
-          <span class="home-tag">Vertical Farming</span>
-          <span class="home-tag">Aeroponik</span>
-          <span class="home-tag">Sistem Tasarımı</span>
-          <span class="home-tag">İzmir · 2026</span>
-        </div>
-      </div>
-
-      <div class="home-cards">
-        <div class="home-card" onclick="nav('mvp', document.querySelector('.nav-btn:nth-child(2)'))">
-          <div class="home-card-icon" style="background:var(--blue-bg);border-color:var(--blue-dim);">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 3 3 5-6" stroke="#6ba8c9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="home-hero">
+            <div class="home-eyebrow">GrowmiLab · İzmir · 2026</div>
+            <h1 class="home-h1">Tarım artık bir<br><em>tasarım meselesi.</em></h1>
+            <p class="home-lead">GrowmiLab, yetiştirdiği ürün ile geliştirdiği sistemi ve bu ikisinin sinerjisini tek çatı altında kurmayı hedefleyen; henüz yolun başında olan bir başlangıçtır.</p>
+            <div class="home-tags">
+              <span class="home-tag">Hidroponik</span>
+              <span class="home-tag">Vertical Farming</span>
+              <span class="home-tag">Aeroponik</span>
+              <span class="home-tag">Sistem Tasarımı</span>
+              <span class="home-tag">İzmir · 2026</span>
+            </div>
           </div>
-          <div class="home-card-label">Aşama 1</div>
-          <div class="home-card-title">MVP</div>
-          <div class="home-card-desc">9 haftalık başlangıç planı. Balkon sisteminden ilk satışa giden yol haritası.</div>
-        </div>
-        <div class="home-card" onclick="nav('model', document.querySelector('.nav-btn:nth-child(3)'))">
-          <div class="home-card-icon" style="background:var(--green-bg);border-color:var(--green-dim);">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/></svg>
+
+          <div class="home-stats">
+            <div class="home-stat">
+              <div class="home-stat-val">25–30<span> gün</span></div>
+              <div class="home-stat-label">Tohumdan hasada, fesleğen</div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat-val">3<span> kol</span></div>
+              <div class="home-stat-label">Paralel iş modeli</div>
+            </div>
+            <div class="home-stat">
+              <div class="home-stat-val">9<span> hafta</span></div>
+              <div class="home-stat-label">MVP süre hedefi</div>
+            </div>
           </div>
-          <div class="home-card-label">İş modeli</div>
-          <div class="home-card-title">Model</div>
-          <div class="home-card-desc">Ürün satışı, sistem satışı ve showroom sinerji modelinin detayları.</div>
-        </div>
-        <div class="home-card" onclick="nav('research', document.querySelector('.nav-btn:nth-child(4)'))">
-          <div class="home-card-icon" style="background:var(--amber-bg);border-color:var(--amber-dim);">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="#c9a84c" stroke-width="1.3"/><path d="M10.5 10.5l3 3" stroke="#c9a84c" stroke-width="1.3" stroke-linecap="round"/></svg>
+
+          <div class="home-manifesto">
+            <div class="home-manifesto-label">Vizyon</div>
+            <p class="home-manifesto-text">
+              Toprak olmadan, <strong>kontrollü koşullarda</strong> yetiştirilen ürünlerin —
+              yıl boyunca, tahmin edilebilir kalitede üretilmesi mümkün.
+              Bu sistem sadece <strong>bir çiftlik değil</strong>; aynı zamanda
+              başkalarının da kurmasını sağlayacak <strong>bir ürün</strong>.
+              Üretim tesisi, aynı zamanda canlı demo alanı.
+            </p>
           </div>
-          <div class="home-card-label">Veri</div>
-          <div class="home-card-title">Research</div>
-          <div class="home-card-desc">Devlet destekleri, ürün benchmarkları ve sistem analizleri.</div>
-        </div>
-      </div>
 
-      <div class="home-manifesto">
-        <div class="home-manifesto-label">Vizyon</div>
-        <p class="home-manifesto-text">
-          Toprak olmadan, <strong>kontrollü koşullarda</strong> yetiştirilen ürünlerin —
-          yıl boyunca, tahmin edilebilir kalitede üretilmesi mümkün.
-          Bu sistem sadece <strong>bir çiftlik değil</strong>; aynı zamanda
-          başkalarının da kurmasını sağlayacak <strong>bir ürün</strong>.
-          Üretim tesisi, aynı zamanda canlı demo alanı.
-        </p>
-      </div>
+          <div class="home-cards">
+            <div class="home-card" onclick="nav('mvp', document.querySelector('.nav-btn:nth-child(2)'))">
+              <div class="home-card-icon" style="background:var(--blue-bg);border-color:var(--blue-dim);">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 3 3 5-6" stroke="#6ba8c9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="home-card-label">Aşama 1</div>
+              <div class="home-card-title">MVP</div>
+              <div class="home-card-desc">9 haftalık başlangıç planı. Balkon sisteminden ilk satışa giden yol haritası.</div>
+            </div>
+            <div class="home-card" onclick="nav('model', document.querySelector('.nav-btn:nth-child(3)'))">
+              <div class="home-card-icon" style="background:var(--green-bg);border-color:var(--green-dim);">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/></svg>
+              </div>
+              <div class="home-card-label">İş modeli</div>
+              <div class="home-card-title">Model</div>
+              <div class="home-card-desc">Ürün satışı, sistem satışı ve showroom sinerji modelinin detayları.</div>
+            </div>
+            <div class="home-card" onclick="nav('research', document.querySelector('.nav-btn:nth-child(4)'))">
+              <div class="home-card-icon" style="background:var(--amber-bg);border-color:var(--amber-dim);">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="#c9a84c" stroke-width="1.3"/><path d="M10.5 10.5l3 3" stroke="#c9a84c" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              <div class="home-card-label">Veri</div>
+              <div class="home-card-title">Research</div>
+              <div class="home-card-desc">Devlet destekleri, ürün benchmarkları ve sistem analizleri.</div>
+            </div>
+          </div>
 
-      <div class="home-stats">
-        <div class="home-stat">
-          <div class="home-stat-val">25–30<span> gün</span></div>
-          <div class="home-stat-label">Tohumdan hasada, fesleğen</div>
         </div>
-        <div class="home-stat">
-          <div class="home-stat-val">3<span> kol</span></div>
-          <div class="home-stat-label">Paralel iş modeli</div>
-        </div>
-        <div class="home-stat">
-          <div class="home-stat-val">9<span> hafta</span></div>
-          <div class="home-stat-label">MVP süre hedefi</div>
-        </div>
-      </div>
 
+        <aside class="home-right">
+          <div class="home-model">
+            <img id="tower-img" src="./tower.png" alt="Hidroponik tower">
+          </div>
+        </aside>
+      </div>
     </div>
 
     <!-- ══════════ MVP ══════════ -->
@@ -455,12 +496,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
       <div class="model-grid">
 
+        <!-- Kol 1: Ürün satışı -->
         <div class="model-card">
-          <div class="model-card-icon" style="background:var(--green-bg);">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z" stroke="#7dc96b" stroke-width="1.2"/><path d="M9 6v3l2 2" stroke="#7dc96b" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <div class="model-card-head">
+            <div class="model-card-icon" style="background:var(--green-bg);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z" stroke="#7dc96b" stroke-width="1.2"/><path d="M9 6v3l2 2" stroke="#7dc96b" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="model-card-tag" style="color:var(--green);">Kol 1</div>
+              <div class="model-card-title">Ürün satışı</div>
+            </div>
           </div>
-          <div class="model-card-tag" style="color:var(--green);">Kol 1</div>
-          <div class="model-card-title">Ürün satışı</div>
           <div class="model-card-desc">Seçilen sistem üzerinden yetiştirilen besinlerin doğrudan satışı. Tekrarlayan gelir, düşük edinim maliyeti.</div>
           <div class="model-card-items">
             <div class="model-card-item">Yaprak yeşillikleri (fesleğen, roka, nane…)</div>
@@ -470,42 +516,69 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           </div>
         </div>
 
+        <!-- Kol 2: Sistem satışı (iki format birlikte) -->
         <div class="model-card">
-          <div class="model-card-icon" style="background:var(--blue-bg);">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="10" y="2" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="2" y="10" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="10" y="10" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/></svg>
+          <div class="model-card-head">
+            <div class="model-card-icon" style="background:var(--blue-bg);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="10" y="2" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="2" y="10" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/><rect x="10" y="10" width="6" height="6" rx="1.5" stroke="#6ba8c9" stroke-width="1.2"/></svg>
+            </div>
+            <div>
+              <div class="model-card-tag" style="color:var(--blue);">Kol 2</div>
+              <div class="model-card-title">Sistem satışı</div>
+            </div>
           </div>
-          <div class="model-card-tag" style="color:var(--blue);">Kol 2 — Fiziksel</div>
-          <div class="model-card-title">Sistem satışı · Kit</div>
-          <div class="model-card-desc">Kendi Ar-Ge ile geliştirilen sistemlerin fiziksel kit formatında satışı. Yüksek birim marj.</div>
-          <div class="model-card-items">
-            <div class="model-card-item">Son kullanıcıya kurulabilir paket</div>
-            <div class="model-card-item">Hobi, eğitim kurumları, küçük işletmeler</div>
-            <div class="model-card-item">Hazır distribütörlük değil — özgün tasarım</div>
+          <div class="model-card-desc">Kendi Ar-Ge'si ile geliştirilen hidroponik / dikey tarım sistemlerinin iki farklı formatta sunulması. Hazır distribütörlük değil — özgün tasarım.</div>
+
+          <div class="subformat-grid">
+            <div class="subformat">
+              <div class="subformat-hdr">
+                <div class="subformat-icon" style="background:var(--blue-bg);">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 5l6-3 6 3v6l-6 3-6-3V5z" stroke="#6ba8c9" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 5l6 3 6-3M8 8v6" stroke="#6ba8c9" stroke-width="1.2"/></svg>
+                </div>
+                <div>
+                  <div class="subformat-tag" style="color:var(--blue);">Format A · Fiziksel</div>
+                  <div class="subformat-title">Kit</div>
+                </div>
+              </div>
+              <div class="subformat-desc">Son kullanıcıya kurulabilir hazır paket. Yüksek birim marj.</div>
+              <div class="subformat-items">
+                <div class="subformat-item">Hobi, eğitim, küçük işletmeler</div>
+                <div class="subformat-item">Kutu açılır, kurulur, çalışır</div>
+              </div>
+            </div>
+
+            <div class="subformat">
+              <div class="subformat-hdr">
+                <div class="subformat-icon" style="background:var(--amber-bg);">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="#c9a84c" stroke-width="1.2"/><path d="M5 6h6M5 9h6M5 12h4" stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <div class="subformat-tag" style="color:var(--amber);">Format B · Dijital</div>
+                  <div class="subformat-title">Plan</div>
+                </div>
+              </div>
+              <div class="subformat-desc">Plan + BOM + eğitim içeriği. Kullanıcı kendi kurar. Sıfır stok.</div>
+              <div class="subformat-items">
+                <div class="subformat-item">Teknik çizim + malzeme listesi</div>
+                <div class="subformat-item">Uluslararası DIY topluluğu</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="model-card">
-          <div class="model-card-icon" style="background:var(--amber-bg);">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#c9a84c" stroke-width="1.2"/><path d="M6 4V3M12 4V3" stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round"/><path d="M5 9h8M5 12h5" stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <!-- Kol 3: Showroom / Sinerji -->
+        <div class="model-card" style="background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);">
+          <div class="model-card-head">
+            <div class="model-card-icon" style="background:var(--purple-bg);">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 14s2-2 7-2 7 2 7 2" stroke="#c4a8f0" stroke-width="1.2" stroke-linecap="round"/><circle cx="9" cy="6" r="3" stroke="#c4a8f0" stroke-width="1.2"/></svg>
+            </div>
+            <div>
+              <div class="model-card-tag" style="color:var(--purple);">Kol 3 · Sinerji</div>
+              <div class="model-card-title">Showroom / Demo çiftlik</div>
+            </div>
           </div>
-          <div class="model-card-tag" style="color:var(--amber);">Kol 2 — Dijital</div>
-          <div class="model-card-title">Sistem satışı · Plan</div>
-          <div class="model-card-desc">Plan + malzeme listesi + eğitim içeriği. Kullanıcı kendi kurar. Ölçeklenebilir, sıfır stok.</div>
-          <div class="model-card-items">
-            <div class="model-card-item">BOM (malzeme listesi) + teknik çizim</div>
-            <div class="model-card-item">Kurulum rehberi + video içerik</div>
-            <div class="model-card-item">DIY topluluğu, uluslararası satış potansiyeli</div>
-          </div>
-        </div>
-
-        <div class="model-card full" style="background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);">
-          <div class="model-card-icon" style="background:var(--purple-bg);">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 14s2-2 7-2 7 2 7 2" stroke="#c4a8f0" stroke-width="1.2" stroke-linecap="round"/><circle cx="9" cy="6" r="3" stroke="#c4a8f0" stroke-width="1.2"/></svg>
-          </div>
-          <div class="model-card-tag" style="color:var(--purple);">Kol 3 — Sinerji</div>
-          <div class="model-card-title">Showroom / Demo çiftlik</div>
           <div class="model-card-desc">Üretim tesisi aynı zamanda canlı demo alanı. Ürün üretilirken potansiyel sistem müşterilerine çalışan örnek sunulur. Bu üç kolu birbirine bağlayan merkez.</div>
-          <div class="model-card-items" style="flex-direction:row;flex-wrap:wrap;gap:12px;margin-top:16px;">
+          <div class="model-card-items" style="flex-direction:row;flex-wrap:wrap;gap:8px 16px;margin-top:16px;">
             <div class="model-card-item">Çalışan sistemi ziyaretçi görebilir</div>
             <div class="model-card-item">Sistem satışı için en güçlü ikna aracı</div>
             <div class="model-card-item">İçerik üretimi için doğal stüdyo</div>
@@ -766,6 +839,39 @@ function itab(prefix, name, btn){
   document.getElementById(prefix+'-'+name).classList.add('active');
   btn.classList.add('active');
 }
+</script>
+
+<script>
+(function initTowerRotation() {
+  const img = document.getElementById('tower-img');
+  if (!img) return;
+
+  let lastScrollY = window.scrollY;
+  let rotationVelocity = 0;
+  let currentRotation = 0;
+  const AUTO_SPEED = 0.08;       // constant slow rotation (deg/frame)
+  const SCROLL_FACTOR = 0.12;    // scroll delta -> rotation velocity
+  const DECAY = 0.93;            // velocity decay per frame
+  const MAX_VELOCITY = 8;        // cap sudden scrolls
+
+  window.addEventListener('scroll', () => {
+    const delta = window.scrollY - lastScrollY;
+    rotationVelocity += delta * SCROLL_FACTOR;
+    if (rotationVelocity > MAX_VELOCITY) rotationVelocity = MAX_VELOCITY;
+    if (rotationVelocity < -MAX_VELOCITY) rotationVelocity = -MAX_VELOCITY;
+    lastScrollY = window.scrollY;
+  }, { passive: true });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const homeView = document.getElementById('view-home');
+    if (!homeView || !homeView.classList.contains('active')) return;
+    currentRotation += rotationVelocity + AUTO_SPEED;
+    rotationVelocity *= DECAY;
+    img.style.transform = `rotateY(${currentRotation}deg)`;
+  }
+  requestAnimationFrame(animate);
+})();
 </script>
 </body>
 </html>
