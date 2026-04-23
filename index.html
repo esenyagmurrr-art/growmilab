@@ -16,6 +16,8 @@
   --blue:#6ba8c9;--blue-bg:#0a1520;--blue-dim:#1a3d56;
   --red-bg:#200a0a;--red:#c96b6b;--red-dim:#5a1a1a;
   --purple:#c4a8f0;--purple-bg:#1a0e2e;--purple-dim:#4a3478;
+  --saffron:#e8a43c;--saffron-bg:#1f1408;--saffron-dim:#4a3010;--saffron-light:#f4c069;
+  --crimson:#c94545;--crimson-bg:#1a0606;--crimson-dim:#4a1818;
   --radius:10px;--radius-lg:14px;--radius-xl:20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -241,7 +243,99 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .cg{background:var(--green-bg);color:var(--green-light);border-color:var(--green-dim);}
 .ca{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-dim);}
 .cb{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-dim);}
+.cr{background:var(--red-bg);color:var(--red);border-color:var(--red-dim);}
+.cs{background:var(--saffron-bg);color:var(--saffron);border-color:var(--saffron-dim);}
 .callout strong{font-weight:600;}
+
+/* ─── SAFRAN (Product) additional styles ─── */
+.insight.s{border-color:var(--saffron-dim);border-left-color:var(--saffron);background:var(--saffron-bg);color:var(--text);}
+.insight.s strong{color:var(--saffron-light);}
+.rv.s{color:var(--saffron);}
+.rv.g{color:var(--green);}
+.rv.a{color:var(--amber);}
+.rv.r{color:var(--red);}
+.rv.b{color:var(--blue);}
+.mc-val.g{color:var(--green);}
+.mc-val.r{color:var(--red);}
+.mc-val.s{color:var(--saffron);}
+.mc.featured{background:var(--saffron-bg);border-color:var(--saffron-dim);}
+.mc.featured .mc-label{color:var(--saffron);opacity:.75;}
+.mc.featured .mc-val{color:var(--saffron-light);}
+.mc.featured .mc-sub{color:var(--saffron);opacity:.65;}
+.bs{background:var(--saffron-bg);color:var(--saffron);border-color:var(--saffron-dim);}
+.bp{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-dim);}
+
+/* card left-border variants */
+.card.left-saffron{border-left:2px solid var(--saffron);}
+.card.left-green{border-left:2px solid var(--green);}
+.card.left-amber{border-left:2px solid var(--amber);}
+.card.left-red{border-left:2px solid var(--red);}
+.card.left-blue{border-left:2px solid var(--blue);}
+.card.left-purple{border-left:2px solid var(--purple);}
+
+/* pi-c wrapper */
+.pi-c{flex:1;min-width:0;}
+.pi-num.saf{border-color:var(--saffron-dim);background:var(--saffron-bg);color:var(--saffron);}
+
+/* TLDR */
+.tldr{background:var(--saffron-bg);border:0.5px solid var(--saffron-dim);border-left:3px solid var(--saffron);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:16px 18px;margin-bottom:16px;}
+.tldr-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:7px;}
+.tldr-text{font-size:13px;line-height:1.7;color:var(--text);}
+.tldr-text strong{color:var(--saffron-light);font-weight:500;}
+
+/* pros/cons */
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+@media(max-width:560px){.pros-cons{grid-template-columns:1fr;}}
+.pros-cons-col{background:var(--surface2);border:0.5px solid var(--border);border-radius:var(--radius);padding:12px 14px;}
+.pros-cons-col.pros{border-left:2px solid var(--green);}
+.pros-cons-col.cons{border-left:2px solid var(--red);}
+.pros-cons-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;}
+.list-pros,.list-cons{list-style:none;padding:0;margin:0;}
+.list-pros li,.list-cons li{font-size:12px;line-height:1.65;color:var(--text2);padding-left:16px;position:relative;margin-bottom:4px;}
+.list-pros li:before{content:'+';position:absolute;left:0;color:var(--green);font-weight:700;top:-1px;font-size:13px;}
+.list-cons li:before{content:'−';position:absolute;left:0;color:var(--red);font-weight:700;top:-1px;font-size:13px;}
+.list-pros strong,.list-cons strong{color:var(--text);font-weight:500;}
+
+/* RISK matrix */
+.risk{background:var(--surface2);border:0.5px solid var(--border);border-left:2px solid;border-radius:0 var(--radius) var(--radius) 0;padding:12px 14px;margin-bottom:8px;}
+.risk.high{border-left-color:var(--red);}
+.risk.med{border-left-color:var(--amber);}
+.risk.low{border-left-color:var(--blue);}
+.risk-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;gap:10px;flex-wrap:wrap;}
+.risk-t{font-size:12.5px;font-weight:500;color:var(--text);}
+.risk-d{font-size:12px;color:var(--text2);line-height:1.6;}
+.risk-mit{font-size:11.5px;color:var(--text3);margin-top:7px;padding-top:7px;border-top:0.5px solid var(--border);}
+.risk-mit strong{color:var(--text2);font-weight:500;}
+.br{background:var(--red-bg);color:var(--red);border-color:var(--red-dim);}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;background:var(--surface2);border:0.5px solid var(--border);border-radius:var(--radius);margin:8px 0;}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px;}
+.tbl th{text-align:left;padding:8px 10px;background:var(--surface3);color:var(--text2);font-weight:500;font-family:'DM Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;border-bottom:0.5px solid var(--border2);white-space:nowrap;}
+.tbl td{padding:8px 10px;border-bottom:0.5px solid var(--border);color:var(--text);line-height:1.5;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl td.muted{color:var(--text2);}
+.tbl td.s{color:var(--saffron);font-weight:500;}
+.tbl td.g{color:var(--green);font-weight:500;}
+.tbl td.r{color:var(--red);font-weight:500;}
+
+/* subsection divider */
+.subsec{margin:22px 0 10px;padding-top:16px;border-top:0.5px solid var(--border);}
+.subsec-title{font-size:14px;font-weight:500;color:var(--saffron);margin-bottom:5px;}
+.subsec-desc{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:12px;}
+
+/* saffron widget-body (itab-section content uses this) */
+.widget-body{padding:18px;}
+@media(max-width:720px){.widget-body{padding:14px;}}
+
+/* saffron widget-body cards inside */
+.itab-section .card{background:var(--surface2);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;}
+.itab-section .card-title{font-size:12.5px;font-weight:500;color:var(--text);margin-bottom:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.itab-section .row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:0.5px solid var(--border);font-size:12px;gap:12px;line-height:1.5;}
+.itab-section .row:last-child{border-bottom:none;padding-bottom:0;}
+.itab-section .row:first-of-type{padding-top:0;}
+.itab-section .rl{color:var(--text2);flex:1;min-width:0;}
+.itab-section .rv{font-weight:500;color:var(--text);flex-shrink:0;text-align:right;max-width:62%;line-height:1.45;font-size:12px;}
 
 /* MODEL page */
 .model-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;}
@@ -394,6 +488,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="topbar-logo">GrowmiLab</div>
     <nav class="nav">
       <button class="nav-btn active" onclick="nav('home',this)">Home</button>
+      <button class="nav-btn" onclick="nav('product',this)">Product</button>
       <button class="nav-btn" onclick="nav('mvp',this)">MVP</button>
       <button class="nav-btn" onclick="nav('model',this)">Model</button>
       <button class="nav-btn" onclick="nav('research',this)">Research</button>
@@ -430,8 +525,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           </div>
           <div class="home-stats">
             <div class="home-stat">
-              <div class="home-stat-val">25–30<span> gün</span></div>
-              <div class="home-stat-label">Tohumdan hasada, fesleğen</div>
+              <div class="home-stat-val">Açık<span> uçlu</span></div>
+              <div class="home-stat-label">Ürün odağı · veriye dayalı</div>
             </div>
             <div class="home-stat">
               <div class="home-stat-val">3<span> kol</span></div>
@@ -453,7 +548,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
             </p>
           </div>
           <div class="home-cards">
-            <div class="home-card" onclick="nav('mvp', document.querySelector('.nav-btn:nth-child(2)'))">
+            <div class="home-card" onclick="nav('product', document.querySelector('.nav-btn:nth-child(2)'))">
+              <div class="home-card-icon" style="background:var(--saffron-bg);border-color:var(--saffron-dim);">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2c-1.2 1.8-2.2 3.4-2.2 5.2 0 1.2 1 2.3 2.2 2.3s2.2-1.1 2.2-2.3c0-1.8-1-3.4-2.2-5.2z" stroke="#e8a43c" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 9.5v4.5M5.5 12.5h5" stroke="#e8a43c" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              <div class="home-card-label">Ürün araştırmaları</div>
+              <div class="home-card-title">Product</div>
+              <div class="home-card-desc">Safran 360° pazar raporu — üretim, kalite, ihracat, markalaşma, aksiyon planı.</div>
+            </div>
+            <div class="home-card" onclick="nav('mvp', document.querySelector('.nav-btn:nth-child(3)'))">
               <div class="home-card-icon" style="background:var(--blue-bg);border-color:var(--blue-dim);">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 3 3 5-6" stroke="#6ba8c9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -461,7 +564,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="home-card-title">MVP</div>
               <div class="home-card-desc">9 haftalık başlangıç planı. Balkon sisteminden ilk satışa giden yol haritası.</div>
             </div>
-            <div class="home-card" onclick="nav('model', document.querySelector('.nav-btn:nth-child(3)'))">
+            <div class="home-card" onclick="nav('model', document.querySelector('.nav-btn:nth-child(4)'))">
               <div class="home-card-icon" style="background:var(--green-bg);border-color:var(--green-dim);">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="#7dc96b" stroke-width="1.3"/></svg>
               </div>
@@ -469,7 +572,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="home-card-title">Model</div>
               <div class="home-card-desc">Ürün satışı, sistem satışı ve showroom sinerji modelinin detayları.</div>
             </div>
-            <div class="home-card" onclick="nav('research', document.querySelector('.nav-btn:nth-child(4)'))">
+            <div class="home-card" onclick="nav('research', document.querySelector('.nav-btn:nth-child(5)'))">
               <div class="home-card-icon" style="background:var(--amber-bg);border-color:var(--amber-dim);">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="#c9a84c" stroke-width="1.3"/><path d="M10.5 10.5l3 3" stroke="#c9a84c" stroke-width="1.3" stroke-linecap="round"/></svg>
               </div>
@@ -477,7 +580,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="home-card-title">Research</div>
               <div class="home-card-desc">Devlet destekleri, ürün benchmarkları ve sistem analizleri.</div>
             </div>
-            <div class="home-card" onclick="nav('training', document.querySelector('.nav-btn:nth-child(6)'))">
+            <div class="home-card" onclick="nav('training', document.querySelector('.nav-btn:nth-child(7)'))">
               <div class="home-card-icon" style="background:var(--purple-bg);border-color:var(--purple-dim);">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5l6-3 6 3-6 3-6-3z" stroke="#c4a8f0" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 7v3.5c0 1 1.8 2 4 2s4-1 4-2V7" stroke="#c4a8f0" stroke-width="1.3" stroke-linecap="round"/></svg>
               </div>
@@ -492,6 +595,1047 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
             <img id="tower-img" src="./tower.png" alt="Hidroponik tower">
           </div>
         </aside>
+      </div>
+    </div>
+
+    <!-- ══════════ PRODUCT ══════════ -->
+    <div id="view-product" class="view">
+      <div class="section-eyebrow">Ürün araştırmaları</div>
+      <div class="section-title">Ürün değerlendirmeleri</div>
+      <div class="section-desc">GrowmiLab'ın potansiyel ürün odağı için kapsamlı pazar araştırmaları. Henüz seçim yapılmadı — her aday tam 360° inceleme altında.</div>
+
+      <div class="widget">
+        <div class="widget-hdr">
+          <div class="widget-title">Safran 360° Pazar Raporu</div>
+          <div class="widget-meta">12 bölüm · Nisan 2026</div>
+        </div>
+        <div class="itab-bar">
+          <button class="itab-btn active" onclick="itab('saf','ozet',this)">Özet</button>
+          <button class="itab-btn" onclick="itab('saf','pazar',this)">Pazar</button>
+          <button class="itab-btn" onclick="itab('saf','uretim',this)">Üretim</button>
+          <button class="itab-btn" onclick="itab('saf','risk',this)">Avantaj/Risk</button>
+          <button class="itab-btn" onclick="itab('saf','kalite',this)">Kalite/ISO</button>
+          <button class="itab-btn" onclick="itab('saf','sahte',this)">Sahte</button>
+          <button class="itab-btn" onclick="itab('saf','paket',this)">Paketleme</button>
+          <button class="itab-btn" onclick="itab('saf','marka',this)">Markalaşma</button>
+          <button class="itab-btn" onclick="itab('saf','satis',this)">Satış</button>
+          <button class="itab-btn" onclick="itab('saf','ihracat',this)">İhracat</button>
+          <button class="itab-btn" onclick="itab('saf','hukuki',this)">Hukuki</button>
+          <button class="itab-btn" onclick="itab('saf','aksiyon',this)">Aksiyon</button>
+        </div>
+
+        <!-- ────── ÖZET ────── -->
+        <div id="saf-ozet" class="itab-section active">
+          <div class="tldr">
+            <div class="tldr-label">TL;DR — 60 saniyede karar verilebilir özet</div>
+            <div class="tldr-text">
+              Küresel safran pazarı <strong>$390M–$1.5B aralığında</strong> (rapor kaynağına göre değişiyor), <strong>%6.3–%8.8 CAGR</strong> ile büyüyor. Ana itici güç: kozmetik + farmasötik + nutrasötik kullanım — gıdadan daha hızlı büyüyor. <strong>İran küresel arzın %90'ını domine ediyor</strong> ama yaptırımlar Türk üreticisine kapı açıyor. Türkiye'nin tek tescilli AB coğrafi işaretli baharatı <strong>Safranbolu Safranı</strong> (2024 tescilli). Birim fiyat: <strong>Türkiye'de 150–450 TL/gr perakende, ihracat $3.000–5.000/kg toptan</strong>. Anahtar standart: <strong>ISO 3632</strong> (krosin/safranal/pikrosrosin spektrofotometre testi).
+            </div>
+          </div>
+
+          <div class="mgrid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
+            <div class="mc featured"><div class="mc-label">Küresel pazar (2026)</div><div class="mc-val">$390M–$1.5B</div><div class="mc-sub">rapor kaynağına göre</div></div>
+            <div class="mc featured"><div class="mc-label">Yıllık büyüme</div><div class="mc-val">%6.3–%8.8</div><div class="mc-sub">2026–2033 tahmin</div></div>
+            <div class="mc"><div class="mc-label">İran pazar payı</div><div class="mc-val r">~%90</div><div class="mc-sub">küresel hakimiyet</div></div>
+            <div class="mc"><div class="mc-label">Dünya üretimi</div><div class="mc-val">~178 ton</div><div class="mc-sub">yıllık toplam</div></div>
+            <div class="mc"><div class="mc-label">İhracat fiyatı</div><div class="mc-val s">$3K–5K</div><div class="mc-sub">kg toptan, Sınıf I</div></div>
+            <div class="mc"><div class="mc-label">TR perakende</div><div class="mc-val s">150–450 TL</div><div class="mc-sub">gram</div></div>
+            <div class="mc"><div class="mc-label">Lider bölge</div><div class="mc-val">MEA</div><div class="mc-sub">%51.7 küresel gelir</div></div>
+            <div class="mc"><div class="mc-label">En hızlı segment</div><div class="mc-val g">Farma</div><div class="mc-sub">CAGR %9.05</div></div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">⚡ Kritik bulgular</div>
+            <ul class="list-pros" style="margin-top:6px;">
+              <li><strong>"Topraksız safran" söylemi yanıltıcı</strong> — gerçekte perlit+cocopeat substrat kültürü kullanılıyor; saf hidroponik (NFT) safran soğanını çürütür.</li>
+              <li><strong>Pazar İran-bağımlı</strong> — yaptırımlar ve iklim krizi nedeniyle alternatif kaynak arayışı var; Türk üreticisine yapısal fırsat.</li>
+              <li><strong>Safranbolu coğrafi işareti</strong> — 2024'te AB tescili aldı, Türkiye'nin ilk AB-tescilli baharatı; sadece Safranbolu'da üretenlere açık.</li>
+              <li><strong>Farma + nutrasötik + kozmetik</strong> en hızlı büyüyen segmentler — gıdadan üç katı CAGR.</li>
+              <li><strong>Kontrollü iç mekan üretim (CEA)</strong> sektörün geleceği — açık tarladan 2.5–3× daha verimli.</li>
+            </ul>
+          </div>
+
+          <div class="callout cs">
+            <strong>Bu rapor 12 sekme halinde hazırlandı.</strong> Üst menüden istediğin başlığa geç. Her sekmenin kendi mini-özeti var. <em>Önerilen sıra: Pazar → Üretim → Kalite/ISO → İhracat → Markalaşma → Satış → Aksiyon.</em>
+          </div>
+        </div>
+
+        <!-- ────── PAZAR ────── -->
+        <div id="saf-pazar" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Farklı analiz şirketleri farklı rakamlar veriyor — aralığı vermek daha dürüst. Hepsinin ortak noktası: pazar büyüyor, İran hakim, alternatif arayışı artıyor.</div>
+
+          <div class="card">
+            <div class="card-title">Küresel pazar — kaynak karşılaştırması</div>
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <tr><th>Kaynak</th><th>2025/26</th><th>Hedef</th><th>CAGR</th></tr>
+                <tr><td>Future Market Insights</td><td>$390M (2026)</td><td class="s">$800M (2036)</td><td>%7.4</td></tr>
+                <tr><td>Grand View Research</td><td>$482M (2025)</td><td class="s">$884M (2033)</td><td>%7.9</td></tr>
+                <tr><td>IMARC Group</td><td>$600M (2025)</td><td class="s">$1.11B (2034)</td><td>%7.08</td></tr>
+                <tr><td>Mordor Intelligence</td><td class="s">$1.42B (2025)</td><td class="s">$2.06B (2031)</td><td>%6.36</td></tr>
+                <tr><td>Stellar MR</td><td>$1.20B (2025)</td><td class="s">$1.99B (2032)</td><td>%7.5</td></tr>
+                <tr><td>Data Bridge</td><td>$839M (2024)</td><td class="s">$1.37B (2032)</td><td>%6.30</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="callout ca">
+            <strong>Neden bu kadar farklı?</strong> "Saffron market" tanımı oynak — bazıları sadece kuru stigma sayar, bazıları ekstrakt + işlenmiş ürünleri dahil eder. Net olan: <em>pazar 2034'e kadar en az ikiye katlanacak, %6–8 CAGR aralığında.</em>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Bölgesel dağılım</div>
+            <div class="row"><span class="rl">Orta Doğu &amp; Afrika (MEA)</span><span class="rv s">%51.7 lider</span></div>
+            <div class="row"><span class="rl">Avrupa</span><span class="rv">%36.25 (Mordor verisi)</span></div>
+            <div class="row"><span class="rl">Asya-Pasifik</span><span class="rv">~%35</span></div>
+            <div class="row"><span class="rl">UAE büyüme hızı</span><span class="rv g">En hızlı CAGR</span></div>
+            <div class="row"><span class="rl">Asya-Pasifik CAGR</span><span class="rv g">%8.12</span></div>
+            <div class="row"><span class="rl">Türkiye dünya üretim sırası</span><span class="rv">~11. sıra</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">En hızlı büyüyen kullanım alanları</div>
+            <div class="row"><span class="rl">Gıda &amp; içecek</span><span class="rv">%54.7 pazar payı (durağan)</span></div>
+            <div class="row"><span class="rl">Farma + nutrasötik</span><span class="rv g">CAGR %9.05 ⚡ en hızlı</span></div>
+            <div class="row"><span class="rl">Kozmetik &amp; kişisel bakım</span><span class="rv g">CAGR %7+</span></div>
+            <div class="row"><span class="rl">Organik segment</span><span class="rv g">En hızlı büyüme</span></div>
+            <div class="row"><span class="rl">B2C (e-ticaret)</span><span class="rv g">En hızlı dağıtım kanalı</span></div>
+            <div class="row"><span class="rl">Saffron beer/vodka</span><span class="rv b">Niş trend</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Türkiye'nin pazardaki yeri</div>
+            <div class="subsec-desc">Geleneksel olarak küçük üretici, son 5 yılda yeni girişimcilerle hızla büyüyor.</div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">Türkiye üretim verileri</div>
+            <div class="row"><span class="rl">Safranbolu (geleneksel merkez)</span><span class="rv">11 köy · 40 üretici · 37 dekar</span></div>
+            <div class="row"><span class="rl">Safranbolu verim</span><span class="rv">~0.5 kg / dekar</span></div>
+            <div class="row"><span class="rl">Diğer bölgeler</span><span class="rv">Tokat (Erbaa), Amasya, Ordu</span></div>
+            <div class="row"><span class="rl">Yeni gelişen</span><span class="rv">Eskişehir, Konya, Tekirdağ</span></div>
+            <div class="row"><span class="rl">Ege/Akdeniz</span><span class="rv">İzmir, Denizli, Adana, Antalya</span></div>
+            <div class="row"><span class="rl">Türkiye iç tüketim</span><span class="rv a">5+ ton/yıl (ithalata bağımlı)</span></div>
+            <div class="row"><span class="rl">Tek tescilli yerli çeşit</span><span class="rv s">Karaarslan (Eskişehir)</span></div>
+          </div>
+
+          <div class="card left-green">
+            <div class="card-title">Türkiye'nin önde gelen markaları</div>
+            <div class="row"><span class="rl">Safranbolu üreticileri (Cİ)</span><span class="rv">~40 üretici</span></div>
+            <div class="row"><span class="rl">Safranova (Karabük)</span><span class="rv s">İlk organik tescilli</span></div>
+            <div class="row"><span class="rl">Erbaa Safran (Tokat)</span><span class="rv">Soğan + baharat + içerik</span></div>
+            <div class="row"><span class="rl">Avokadocu Ayşe (Amasya)</span><span class="rv">Butik "Altın Safran"</span></div>
+            <div class="row"><span class="rl">Etiler-Köseoğlu (Denizli)</span><span class="rv">Kontrollü ortam, $5M hedef</span></div>
+            <div class="row"><span class="rl">SafBox</span><span class="rv">Kapalı alan + danışmanlık</span></div>
+            <div class="row"><span class="rl">Saffon-A (Eskişehir)</span><span class="rv">100 dekar plan, Karaarslan</span></div>
+            <div class="row"><span class="rl">Bayram Çalışkan (Elazığ)</span><span class="rv">200 TL/gr direkt</span></div>
+          </div>
+
+          <div class="insight s">
+            <strong>Stratejik fırsat:</strong> Türk safran üretiminin tamamı yıllık birkaç yüz kg seviyesinde. İç tüketim 5+ ton, ihracat sıralaması 11. — yani <em>iç pazar bile karşılanamıyor</em>. İran yaptırımları + iklim krizi alternatif arzı arttırıyor. Yerel premium üretici için 5–10 yıllık yapısal pencere açık.
+          </div>
+        </div>
+
+        <!-- ────── ÜRETİM ────── -->
+        <div id="saf-uretim" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Soğan tedariğinden hasada, dormasyondan kurutmaya — sahada işin gerçek halini bilmek ilk yatırımı kurtarır.</div>
+
+          <div class="card">
+            <div class="card-title">3 üretim modeli karşılaştırması</div>
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <tr><th>Kriter</th><th>Açık arazi</th><th>Sera</th><th>İndoor CEA</th></tr>
+                <tr><td class="muted">Kurulum maliyeti</td><td class="g">Düşük</td><td>Orta</td><td class="r">Yüksek</td></tr>
+                <tr><td class="muted">İklim riski</td><td class="r">Çok yüksek</td><td>Orta</td><td class="g">Sıfıra yakın</td></tr>
+                <tr><td class="muted">Verim/m²</td><td>Düşük</td><td>Orta</td><td class="s">2.5–3× fazla</td></tr>
+                <tr><td class="muted">Fusarium riski</td><td class="r">Yüksek</td><td>Orta</td><td class="g">Steril</td></tr>
+                <tr><td class="muted">Yıllık döngü</td><td>1 sezon</td><td>1 sezon</td><td>1 sezon</td></tr>
+                <tr><td class="muted">İşçilik</td><td class="r">Çok yoğun</td><td>Yoğun</td><td>Otomasyon var</td></tr>
+                <tr><td class="muted">Su tüketimi</td><td>Yüksek</td><td>Orta</td><td class="g">~%90 az</td></tr>
+                <tr><td class="muted">Ölçek esnekliği</td><td>Düşük</td><td>Orta</td><td class="g">Modüler</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="callout ca">
+            <strong>"Topraksız" gerçeği:</strong> İndoor CEA bile <em>perlit + cocopeat substrat</em> kullanıyor — saf hidroponik (NFT/DWC) safran için uygun değil. SafBox açıkça söylüyor: <em>"Tamamen topraksız değil, safran özelinde toprak karışımı kullanıyoruz."</em>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Yaşam döngüsü — 4 kritik evre</div>
+            <div class="subsec-desc">Her evrede özel sıcaklık, nem ve ışık değerleri var. Bir evrede yapılan hata yıllık üretimi sıfırlar.</div>
+          </div>
+
+          <div class="card">
+            <div class="pi">
+              <div class="pi-num saf">1</div>
+              <div class="pi-c">
+                <div class="pi-t">Dormasyon (uyku) <span class="badge ba">Haziran–Temmuz · 25–30 °C</span></div>
+                <div class="pi-d">Soğan toprak altında uykuda. Yazın kuru ve sıcak ortam zorunlu. Yanlış nem = sonraki yıl çiçeklenme başarısız. <strong>İyi haber:</strong> satın aldığın soğan genelde uyku evresi tamamlanmış gelir.</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">2</div>
+              <div class="pi-c">
+                <div class="pi-t">Çiçeklenme tetikleme <span class="badge bb">Eylül–Ekim · şok 15–17 °C</span></div>
+                <div class="pi-d">Sıcaklık yavaş yavaş 15–17 °C'ye düşürülür → "termal şok" biyolojik saati tetikler. Kapalı alanda IoT iklim istasyonu yönetir. Açık arazide doğa yapar (200–2200 m irtifa aralığı çalışır). <strong>Zamanlamayı kaçırmak = yıllık çiçek yok.</strong></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">3</div>
+              <div class="pi-c">
+                <div class="pi-t">Çiçeklenme + Hasat <span class="badge bs">Ekim–Kasım · 10–15 gün</span></div>
+                <div class="pi-d">Her soğandan 1–3 çiçek. Çiçek tek günlük, <strong>sabah güneş doğmadan toplanır</strong> (güneş safranal uçucusunu azaltır). 1 gr kuru safran için 150–200 çiçek = ~50–70 soğan. 1 kg safran için <strong>~150.000 çiçek</strong>.</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">4</div>
+              <div class="pi-c">
+                <div class="pi-t">Vegetatif + Korm gelişimi <span class="badge bg">Kasım–Mayıs · yaprak dönemi</span></div>
+                <div class="pi-d">Çiçeklerden sonra yeşil yapraklar. Ana soğanda 3–5 yavru soğan oluşur. Mayıs sonu yapraklar sararır → tekrar dormasyon. <strong>3 yılda bir soğanlar söküp boylanır</strong> (7–10 yavru elde edilir).</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Soğan (korm) tedariği — toplam maliyetin %50–60'ı</div>
+            <div class="subsec-desc">Boy, sertifikasyon ve kaynak — yatırımın kaderini belirleyen üç parametre.</div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">Soğan boylandırması</div>
+            <div class="row"><span class="rl">İri (8–10 cm / 12g+)</span><span class="rv g">Max verim, 3–5 çiçek</span></div>
+            <div class="row"><span class="rl">Orta (5–7 cm / 5–8g)</span><span class="rv">Türkiye yaygın tercihi</span></div>
+            <div class="row"><span class="rl">Küçük (2–4 cm / 2–5g)</span><span class="rv a">1 çiçek, ekonomik değil</span></div>
+            <div class="row"><span class="rl">Minimum çap önerisi</span><span class="rv s">≥ 15 mm</span></div>
+            <div class="row"><span class="rl">Hollanda standardı</span><span class="rv">7–10 cm çevre</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Tedarik kaynakları — 2026 fiyatları</div>
+            <div class="row"><span class="rl">Zengarden 10 adet</span><span class="rv">~196 TL (~20 TL/adet)</span></div>
+            <div class="row"><span class="rl">Zengarden 50 adet paket</span><span class="rv">~790 TL (~16 TL/adet)</span></div>
+            <div class="row"><span class="rl">Erbaa Safran (kg)</span><span class="rv s">~2.200–2.500 TL/kg</span></div>
+            <div class="row"><span class="rl">Hollanda ithalatı</span><span class="rv">Yüksek kalite + ihracat izni</span></div>
+            <div class="row"><span class="rl">İran/Afganistan</span><span class="rv a">Düşük maliyet · kalite şüpheli</span></div>
+            <div class="row"><span class="rl">Karaarslan (yerli tescilli)</span><span class="rv s">Geçit Kuşağı Enstitüsü</span></div>
+          </div>
+
+          <div class="card left-green">
+            <div class="card-title">Yetiştirme parametreleri (kontrollü)</div>
+            <div class="row"><span class="rl">Substrat</span><span class="rv">Perlit + cocopeat (steril)</span></div>
+            <div class="row"><span class="rl">Dormasyon sıcaklığı</span><span class="rv">25–30 °C (yaz)</span></div>
+            <div class="row"><span class="rl">Tetikleme şoku</span><span class="rv">15–17 °C (Eylül-Ekim)</span></div>
+            <div class="row"><span class="rl">Dikim derinliği</span><span class="rv">10–15 cm</span></div>
+            <div class="row"><span class="rl">Sıra üzeri mesafe</span><span class="rv">8–10 cm</span></div>
+            <div class="row"><span class="rl">pH aralığı</span><span class="rv">6.0–7.5 (nötre yakın)</span></div>
+            <div class="row"><span class="rl">Drenaj</span><span class="rv">Mutlaka iyi drene</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Hasat &amp; Kurutma</div>
+          </div>
+
+          <div class="card left-amber">
+            <div class="card-title">Hasat protokolü</div>
+            <div class="row"><span class="rl">Hasat saati</span><span class="rv s">Sabah güneş doğmadan</span></div>
+            <div class="row"><span class="rl">Hasat süresi</span><span class="rv">10–15 gün kesintisiz</span></div>
+            <div class="row"><span class="rl">Çiçek başına stigma</span><span class="rv">3 (1 saf safran)</span></div>
+            <div class="row"><span class="rl">Ayıklama</span><span class="rv">El ile, stilden ayır</span></div>
+            <div class="row"><span class="rl">Ayıklama hızı</span><span class="rv">~50 g taze / saat</span></div>
+            <div class="row"><span class="rl">Tazeden kuruya kayıp</span><span class="rv">~%80</span></div>
+          </div>
+
+          <div class="card left-red">
+            <div class="card-title">Kurutma — kalitenin belirleyicisi</div>
+            <div class="row"><span class="rl">Sıcaklık</span><span class="rv s">35–45 °C</span></div>
+            <div class="row"><span class="rl">Ortam</span><span class="rv">Karanlık + havadar fırın</span></div>
+            <div class="row"><span class="rl">Yöntem</span><span class="rv">İnce katman, döndürerek</span></div>
+            <div class="row"><span class="rl">İdeal nihai nem</span><span class="rv s">< %12 (ISO 3632)</span></div>
+            <div class="row"><span class="rl">Yetersiz kurutma</span><span class="rv r">Küf + kalite kaybı</span></div>
+            <div class="row"><span class="rl">Aşırı kurutma</span><span class="rv r">Safranal kaybı</span></div>
+          </div>
+
+          <div class="callout cs">
+            <strong>Kalite formülü:</strong> Kalite = soğan kalitesi × dormasyon yönetimi × hasat zamanlaması × <strong>kurutma protokolü</strong>. Üreticilerin %80'i kurutmada kaybediyor. ISO 3632 Sınıf 1 hedefliyorsan kurutma laboratuvar standardında olmalı.
+          </div>
+        </div>
+
+        <!-- ────── AVANTAJ/RİSK ────── -->
+        <div id="saf-risk" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Safran "kırmızı altın" — ama altın gibi de pahalı, hassas ve sahteciliğe açık. Her boyutu net görmek şart.</div>
+
+          <div class="pros-cons">
+            <div class="pros-cons-col pros">
+              <div class="pros-cons-label">Avantajlar</div>
+              <ul class="list-pros">
+                <li><strong>Yüksek katma değer</strong> — gram başına dünyanın en pahalı ürünü</li>
+                <li><strong>Küçük alan, büyük gelir</strong> — 1 dönüm yeterli; balkon bile mümkün</li>
+                <li><strong>Çok yıllık bitki</strong> — 3–4 yıl aynı soğanlardan ürün</li>
+                <li><strong>Soğan çoğalır</strong> — 3 yılda 7–10× artar</li>
+                <li><strong>Az su tüketimi</strong> — kurak iklim bitkisi</li>
+                <li><strong>Pestisit kullanılmaz</strong> — organiğe yatkın</li>
+                <li><strong>Pazar büyüyor</strong> — CAGR %6–8</li>
+                <li><strong>İhracat potansiyeli</strong> — UAE, AB, ABD yüksek talep</li>
+                <li><strong>Devlet desteği var</strong> — IPARD, Genç Çiftçi</li>
+                <li><strong>Türkiye iç pazarı doymamış</strong> — ithalata bağımlı</li>
+              </ul>
+            </div>
+            <div class="pros-cons-col cons">
+              <div class="pros-cons-label">Dezavantajlar</div>
+              <ul class="list-cons">
+                <li><strong>Tek sezon, yılda tek hasat</strong> — hata = yıl kaybı</li>
+                <li><strong>Geri dönüş 3–4 yıl</strong> — sabır + sermaye</li>
+                <li><strong>Yüksek başlangıç maliyeti</strong> — 1 dönüm için 220–240K TL</li>
+                <li><strong>Aşırı emek-yoğun hasat</strong> — 10–15 gün kesintisiz</li>
+                <li><strong>Fusarium riski</strong> — toptan soğan kaybı</li>
+                <li><strong>Sahte soğan yaygın</strong> — 6–8 ay boşa gidebilir</li>
+                <li><strong>İran fiyat tabanı baskısı</strong> — %90 hakimiyetinde</li>
+                <li><strong>Kurutma hassasiyeti</strong> — hata tüm kaliteyi siler</li>
+                <li><strong>Saf hidroponik mümkün değil</strong> — substrat zorunlu</li>
+                <li><strong>İzmir geleneksel bölge değil</strong> — kontrollü ortam şart</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Risk matrisi — nerede ne kadar yanabilirsin</div>
+          </div>
+
+          <div class="risk high">
+            <div class="risk-hdr"><div class="risk-t">1. Fusarium &amp; Rhizoctonia (mantar çürüklüğü)</div><span class="badge br">Yüksek risk</span></div>
+            <div class="risk-d">Safran soğanının 1 numaralı düşmanı. Fazla nem + yetersiz drenaj = soğan toptan çürüyor. Bulaşmış bir soğan komşularına sıçrar. Tüm sezonu kaybedebilirsin.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Dikim öncesi soğan dezenfekte (fungisit batırma), perlit+cocopeat steril substrat, EC/pH sıkı kontrol, hasta soğanı anında izole.</div>
+          </div>
+
+          <div class="risk high">
+            <div class="risk-hdr"><div class="risk-t">2. Sahte/düşük kaliteli soğan</div><span class="badge br">Yüksek risk</span></div>
+            <div class="risk-d">Piyasada "safran soğanı" diye satılan ürünlerin bir kısmı başka Crocus türü veya küçük çap. Çiçek beklerken 6–8 ay boşa gider.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> ÇKS kayıtlı üretici, yazılı kalibre garantisi, video ile boy doğrulama, küçük pilot sipariş test, ilk yıl Erbaa Safran gibi tanınan kaynak.</div>
+          </div>
+
+          <div class="risk high">
+            <div class="risk-hdr"><div class="risk-t">3. Kurutma hatası — kalite sınıfı düşüşü</div><span class="badge br">Yüksek risk</span></div>
+            <div class="risk-d">Doğru hasat edilmiş safran yanlış kurutmayla Sınıf 1'den Sınıf 3'e düşer. Fiyat 3 katı azalır.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Sıcaklık kontrollü kurutma fırını (35–45 °C), nem ölçer, ilk yıl deneme + ISO 3632 lab testi.</div>
+          </div>
+
+          <div class="risk med">
+            <div class="risk-hdr"><div class="risk-t">4. Dormasyon + tetikleme yönetimi</div><span class="badge ba">Orta risk</span></div>
+            <div class="risk-d">Yazın 25–30 °C dinlendirme + Ekim'de 15–17 °C şoku — IoT/iklim kontrolü olmadan zor. Zamanlama kaçarsa çiçek hiç açmaz.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Sıcaklık + nem sensörü, veri kaydı, ilk yıl küçük ölçekli test.</div>
+          </div>
+
+          <div class="risk med">
+            <div class="risk-hdr"><div class="risk-t">5. Tek sezon = yılda tek şans</div><span class="badge ba">Orta risk</span></div>
+            <div class="risk-d">Yanlışı bir sonraki Ekim'e kadar tekrar şansı vermez. Para + psikolojik baskı.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Paralel ürün yelpazesi, tek ürüne bağlanma, küçük başla büyüt.</div>
+          </div>
+
+          <div class="risk med">
+            <div class="risk-hdr"><div class="risk-t">6. İran fiyat baskısı + yaptırım belirsizliği</div><span class="badge ba">Orta risk</span></div>
+            <div class="risk-d">Dünya pazarında İran'ın %90 hakimiyeti fiyat tabanını belirler. Yaptırımlar ise alternatif arayışı yaratır = fırsat.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Commodity rekabetinden kaç. Coğrafi hikaye, organik, taze hasat, butik ambalaj, premium restoran.</div>
+          </div>
+
+          <div class="risk low">
+            <div class="risk-hdr"><div class="risk-t">7. Hasat emek yoğunluğu</div><span class="badge bb">Düşük risk</span></div>
+            <div class="risk-d">Çiçek sabah 6'da toplanır. 10–15 gün kesintisiz her sabah. Ayıklama saatlerce el işi.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Küçük ölçek başla, aile/gönüllü/çırak. Yüksek ölçek için mevsimlik işçi planı.</div>
+          </div>
+
+          <div class="risk low">
+            <div class="risk-hdr"><div class="risk-t">8. İzmir iklim adaptasyonu</div><span class="badge bb">Düşük risk</span></div>
+            <div class="risk-d">İzmir geleneksel safran bölgesi değil — yazları sıcak (dormasyon ok), ama kışları mild (doğal şok zayıf). Açık arazi için zayıf.</div>
+            <div class="risk-mit"><strong>Azaltma:</strong> Kapalı alan + iklim kontrolü zaten plan. İzmir dezavantajı kontrollü ortamda sıfırlanır.</div>
+          </div>
+
+          <div class="callout cr">
+            <strong>Hukuki/finansal sorumluluk uyarısı:</strong> Bu rapor bilgilendirme amaçlıdır. Yatırım, vergi, hukuk konularında <strong>mutlaka uzman danışmanlığa başvur</strong>. ÇKS kaydı, IPARD başvurusu, ihracat lisansı süreçleri için Tarım İl Müdürlüğü ve TKDK il koordinatörlüğüyle direkt görüş.
+          </div>
+        </div>
+
+        <!-- ────── KALİTE / ISO ────── -->
+        <div id="saf-kalite" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Safran ihracatının kapısını ISO 3632 açar. Krosin, pikrosrosin ve safranal seviyelerini ölçen bilimsel standart. Lab raporu olmadan B2B ihracat imkânsız.</div>
+
+          <div class="card">
+            <div class="card-title"><span style="color:var(--saffron)">●</span> Krosin — RENK</div>
+            <div class="row"><span class="rl">Ölçüm dalga boyu</span><span class="rv s">440 nm</span></div>
+            <div class="row"><span class="rl">Görev</span><span class="rv">Kırmızı renk + boyama gücü</span></div>
+            <div class="row"><span class="rl">Yüksek krosin =</span><span class="rv g">Yoğun altın sarısı renk</span></div>
+            <div class="row"><span class="rl">Birim</span><span class="rv">E1% absorbans değeri</span></div>
+          </div>
+          <div class="card">
+            <div class="card-title"><span style="color:var(--amber)">●</span> Pikrosrosin — TAT</div>
+            <div class="row"><span class="rl">Ölçüm dalga boyu</span><span class="rv s">257 nm</span></div>
+            <div class="row"><span class="rl">Görev</span><span class="rv">Acımsı/burukluk tat</span></div>
+            <div class="row"><span class="rl">Yüksek pikrosrosin =</span><span class="rv g">Belirgin safran tadı</span></div>
+            <div class="row"><span class="rl">Pişirmeyle</span><span class="rv">Safranala dönüşür</span></div>
+          </div>
+          <div class="card">
+            <div class="card-title"><span style="color:var(--purple)">●</span> Safranal — KOKU</div>
+            <div class="row"><span class="rl">Ölçüm dalga boyu</span><span class="rv s">330 nm</span></div>
+            <div class="row"><span class="rl">Görev</span><span class="rv">Çiçeksi, baharatlı aroma</span></div>
+            <div class="row"><span class="rl">Yüksek safranal =</span><span class="rv g">Yoğun premium koku</span></div>
+            <div class="row"><span class="rl">Uçucu</span><span class="rv a">Hava ile kaybolur</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">ISO 3632 sınıf eşikleri</div>
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <tr><th>Sınıf</th><th>Krosin</th><th>Pikrosrosin</th><th>Safranal</th><th>Nem</th></tr>
+                <tr><td class="s">Extra Class</td><td>≥ 230</td><td>≥ 70</td><td>20–50</td><td>≤ %12</td></tr>
+                <tr><td class="g">Sınıf I</td><td>≥ 200</td><td>≥ 70</td><td>20–50</td><td>≤ %12</td></tr>
+                <tr><td>Sınıf II</td><td>≥ 170</td><td>≥ 55</td><td>20–50</td><td>≤ %12</td></tr>
+                <tr><td>Sınıf III</td><td>≥ 120</td><td>≥ 40</td><td>20–50</td><td>≤ %12</td></tr>
+                <tr><td class="muted">Sınıf IV</td><td>≥ 80</td><td>≥ 30</td><td>20–50</td><td>≤ %12</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="callout ca">
+            <strong>Pratik karşılıklar:</strong> Sınıf I = Negin/Sargol (İran), Mongra (Keşmir), Coupe (İspanya). Premium üreticiler krosin 270+ değerleri yakalıyor. <strong>Sınıf 1 = B2B alıcısının bile bakmadığı eşik değil, minimum giriş.</strong>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Test prosedürü</div>
+            <div class="row"><span class="rl">Numune miktarı</span><span class="rv">~5 mg safran</span></div>
+            <div class="row"><span class="rl">Çözücü</span><span class="rv">Damıtılmış su</span></div>
+            <div class="row"><span class="rl">Cihaz</span><span class="rv">UV-Vis spektrofotometre</span></div>
+            <div class="row"><span class="rl">Lab tipi</span><span class="rv s">ISO/IEC 17025 akrediteli</span></div>
+            <div class="row"><span class="rl">TR laboratuvarları</span><span class="rv">İTÜ, ODTÜ, TÜBİTAK MAM</span></div>
+            <div class="row"><span class="rl">Maliyet</span><span class="rv">2.000–5.000 TL/numune</span></div>
+            <div class="row"><span class="rl">Süre</span><span class="rv">3–10 iş günü</span></div>
+          </div>
+
+          <div class="card left-amber">
+            <div class="card-title">⚠ ISO 3632'nin sınırları</div>
+            <div class="row"><span class="rl">Safranal okuması</span><span class="rv a">Tartışmalı (akademik kritik)</span></div>
+            <div class="row"><span class="rl">Tartrazin/Sudan tespiti</span><span class="rv r">UV-Vis edemiyor</span></div>
+            <div class="row"><span class="rl">Daha kapsamlı yöntem</span><span class="rv s">HPLC + DAD</span></div>
+            <div class="row"><span class="rl">Yeni öneri</span><span class="rv">FT-NIR spektroskopisi</span></div>
+            <div class="row"><span class="rl">Pratik</span><span class="rv">ISO 3632 hâlâ küresel standart</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Geleneksel isim ↔ ISO sınıfı</div>
+            <div class="row"><span class="rl">Super Negin (İran)</span><span class="rv s">Extra Class / Sınıf I</span></div>
+            <div class="row"><span class="rl">Negin (İran)</span><span class="rv s">Sınıf I (üst)</span></div>
+            <div class="row"><span class="rl">Sargol (İran)</span><span class="rv g">Sınıf I (orta)</span></div>
+            <div class="row"><span class="rl">Pushal (İran)</span><span class="rv">Sınıf II</span></div>
+            <div class="row"><span class="rl">Mongra (Keşmir)</span><span class="rv s">Extra Class / Sınıf I</span></div>
+            <div class="row"><span class="rl">Coupe (İspanya)</span><span class="rv s">Sınıf I</span></div>
+            <div class="row"><span class="rl">Mancha (İspanya)</span><span class="rv g">Sınıf I/II</span></div>
+            <div class="row"><span class="rl">Safranbolu (Türkiye)</span><span class="rv s">PDO (AB) + Sınıf I</span></div>
+          </div>
+
+          <div class="insight s">
+            <strong>Stratejik mesaj:</strong> ISO 3632 lab raporu olmadan ne kurumsal alıcıya satarsın, ne ihracat yaparsın, ne nutrasötik/farma firmasına geçersin. <em>İlk hasattan önce lab anlaşması yap, ilk hasatta numuneyi gönder, raporu marka materyalinin merkezine koy.</em>
+          </div>
+        </div>
+
+        <!-- ────── SAHTE ────── -->
+        <div id="saf-sahte" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Yüksek değer = yüksek sahtecilik baskısı. Üretici olarak hem kendini koruyacaksın hem de müşterine güven inşa edeceksin.</div>
+
+          <div class="card left-red">
+            <div class="card-title">Bitkisel sahtecilik</div>
+            <div class="row"><span class="rl">Aspir çiçeği (yalancı safran)</span><span class="rv r">En yaygın TR sahtesi</span></div>
+            <div class="row"><span class="rl">Mısır püskülü (boyalı)</span><span class="rv r">Yüksek</span></div>
+            <div class="row"><span class="rl">Kadife çiçeği</span><span class="rv">Orta</span></div>
+            <div class="row"><span class="rl">Pamuk ipliği (boyalı)</span><span class="rv r">Yüksek</span></div>
+            <div class="row"><span class="rl">Hindistan cevizi lifleri</span><span class="rv">Orta</span></div>
+            <div class="row"><span class="rl">Stigma + boyuncuk karışımı</span><span class="rv">Orta</span></div>
+          </div>
+          <div class="card left-red">
+            <div class="card-title">İnorganik sahtecilik (toz formda)</div>
+            <div class="row"><span class="rl">Zerdeçal + paprika</span><span class="rv r">En yaygın toz sahtesi</span></div>
+            <div class="row"><span class="rl">Tartrazin (E102)</span><span class="rv r">Sentetik sarı boya</span></div>
+            <div class="row"><span class="rl">Sudan boyaları</span><span class="rv r">Yasaklı sentetik</span></div>
+            <div class="row"><span class="rl">Tebeşir, kum, sodyum sülfat</span><span class="rv">Ağırlık dolgu</span></div>
+            <div class="row"><span class="rl">Balmumu (Türkiye'de)</span><span class="rv a">İhracatı baltalıyor</span></div>
+          </div>
+          <div class="card left-red">
+            <div class="card-title">Hayvansal/sentetik</div>
+            <div class="row"><span class="rl">Boyanmış et lifleri</span><span class="rv r">Helal sorun</span></div>
+            <div class="row"><span class="rl">At kılı (boyalı)</span><span class="rv r">Yüksek</span></div>
+            <div class="row"><span class="rl">Sentetik plastik lifler</span><span class="rv r">Yüksek</span></div>
+            <div class="row"><span class="rl">Boyası alınmış stigma</span><span class="rv">Yeniden boyanıp satış</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Evde uygulanabilir test yöntemleri</div>
+          </div>
+
+          <div class="card">
+            <div class="pi">
+              <div class="pi-num saf">1</div>
+              <div class="pi-c">
+                <div class="pi-t">Su testi (en pratik)</div>
+                <div class="pi-d">Birkaç tel safranı ılık suya bırak. <strong>Gerçek:</strong> İlk 5–10 dk hemen renk vermez, yavaşça <em>altın sarısı</em> renk salar. <strong>Sahte:</strong> Anında yoğun kırmızı renk salar veya boyayı bırakır.</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">2</div>
+              <div class="pi-c">
+                <div class="pi-t">Görsel — trompet ucu kontrolü</div>
+                <div class="pi-d">Stigmayı büyüteçle bak. <strong>Gerçek:</strong> İnce, üstü genişleyen <em>trompet</em> şekilli uç. <strong>Sahte:</strong> Damar, lif, odunsu yapı, kesilmiş parçalar.</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">3</div>
+              <div class="pi-c">
+                <div class="pi-t">Koku &amp; tat testi</div>
+                <div class="pi-d"><strong>Gerçek:</strong> Yoğun aroma — bal + saman + hafif metalik notalar. Tat acımsı, buruk. <strong>Sahte:</strong> Kokusuz veya parfümlü, tat tatlımsı veya yapay.</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">4</div>
+              <div class="pi-c">
+                <div class="pi-t">Kağıt testi</div>
+                <div class="pi-d">Telcikleri beyaz kağıda yaslayıp ovala. <strong>Gerçek:</strong> Sarı leke (krosin pigmenti). <strong>Sahte:</strong> Kırmızı/turuncu leke (boya çıkışı).</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">5</div>
+              <div class="pi-c">
+                <div class="pi-t">Mikrodalga (uzman testi)</div>
+                <div class="pi-d">Telcikleri suya batır, mikrodalgada ısıt. <strong>Gerçek:</strong> Yoğun ama yavaş renk değişimi. <strong>Sahte:</strong> Anında renk salar veya rengini tamamen kaybeder.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout cs">
+            <strong>Üretici stratejisi:</strong> Müşterinin sahte korkusunu kendi avantajına çevir. Her ürünün üzerine <em>"Krosin: X / Pikrosrosin: Y / Safranal: Z"</em> + ISO laboratuvar raporu QR kodu yapıştır. Şeffaflık premium fiyatın gerekçesi olur.
+          </div>
+        </div>
+
+        <!-- ────── PAKETLEME ────── -->
+        <div id="saf-paket" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Safran ışık, nem, oksijen ve sıcaklığa son derece hassas. Yanlış ambalaj 6 ayda kaliteyi sıfırlar. Doğru ambalaj 2–3 yıla kadar potansiyel korur.</div>
+
+          <div class="card left-saffron">
+            <div class="card-title">İdeal saklama koşulları</div>
+            <div class="row"><span class="rl">Sıcaklık</span><span class="rv s">15–20 °C (oda + serin)</span></div>
+            <div class="row"><span class="rl">Nem</span><span class="rv s">< %12 (kurutmadan sonra)</span></div>
+            <div class="row"><span class="rl">Işık</span><span class="rv r">Sıfır direkt UV maruziyeti</span></div>
+            <div class="row"><span class="rl">Oksijen</span><span class="rv">Hava sızdırmaz kapama</span></div>
+            <div class="row"><span class="rl">Maks raf ömrü</span><span class="rv g">2–3 yıl optimal</span></div>
+            <div class="row"><span class="rl">Pratik raf ömrü</span><span class="rv">12–18 ay (perakende)</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">3 katmanlı ambalaj sistemi</div>
+            <div class="subsec-desc">B2C + ihracat için standart.</div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">1. Birincil (ürünle direkt temas)</div>
+            <div class="row"><span class="rl">Cam kavanoz (amber/kahverengi)</span><span class="rv s">⭐ İlk tercih</span></div>
+            <div class="row"><span class="rl">Cam kavanoz (şeffaf + dış kutu)</span><span class="rv g">İkinci tercih</span></div>
+            <div class="row"><span class="rl">Alüminyum tüp/kutu</span><span class="rv g">Işığa karşı mükemmel</span></div>
+            <div class="row"><span class="rl">Vakumlu alüminyum poşet</span><span class="rv g">Toptan/B2B ideal</span></div>
+            <div class="row"><span class="rl">Plastik (PET)</span><span class="rv r">❌ Asla — koku transferi</span></div>
+            <div class="row"><span class="rl">Perakende kavanoz</span><span class="rv">100 ml — 0.5–1 gr safran</span></div>
+            <div class="row"><span class="rl">Mini kavanoz</span><span class="rv">50 ml — 0.1–0.5 gr</span></div>
+            <div class="row"><span class="rl">Kapak</span><span class="rv">Vidalı silikon contalı</span></div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">2. İkincil (görsel + marka)</div>
+            <div class="row"><span class="rl">Karton kutu (mat baskılı)</span><span class="rv">Premium algı</span></div>
+            <div class="row"><span class="rl">İç dolgu</span><span class="rv">İpek/kraft kağıt sargı</span></div>
+            <div class="row"><span class="rl">Etiket</span><span class="rv">Kavanoza + kutuya çift</span></div>
+            <div class="row"><span class="rl">QR kod (lab raporu)</span><span class="rv s">Şeffaflık + güven</span></div>
+            <div class="row"><span class="rl">Hediye paketi opsiyonu</span><span class="rv g">Marj artırır</span></div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">3. Üçüncül (nakliye)</div>
+            <div class="row"><span class="rl">Strafor (EPS) kavanoz koruma</span><span class="rv s">Kırılmaya karşı ⭐</span></div>
+            <div class="row"><span class="rl">Oluklu mukavva dış kutu</span><span class="rv g">Standart</span></div>
+            <div class="row"><span class="rl">Dolgu malzemesi</span><span class="rv">Hava yastığı / kraft kağıt</span></div>
+            <div class="row"><span class="rl">Kargo etiketi</span><span class="rv">"Kırılır" + "Bu tarafa"</span></div>
+            <div class="row"><span class="rl">İhracat palet</span><span class="rv">120×80 cm Euro Pallet</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Etiket zorunlu içerikler (TR + AB)</div>
+            <div class="row"><span class="rl">Ürün adı (Crocus sativus L.)</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Net miktar (gram)</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Lot no + üretim tarihi</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Son tüketim tarihi</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Üretici/ithalatçı bilgisi</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Menşe ülke</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Saklama koşulları</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">ISO 3632 sınıfı + değerleri</span><span class="rv g">Premium için kritik</span></div>
+            <div class="row"><span class="rl">Coğrafi işaret logosu</span><span class="rv s">Marj artırır</span></div>
+            <div class="row"><span class="rl">Organik sertifikası logosu</span><span class="rv s">Marj artırır</span></div>
+            <div class="row"><span class="rl">Helal (Körfez ihracatı)</span><span class="rv s">Zorunlu (Suudi)</span></div>
+          </div>
+
+          <div class="callout cb">
+            <strong>Tedarikçi referansları (TR):</strong> Cam kavanoz: Şişecam, Sarkap. Strafor: Özalp, Meva, SFT Strafor. Alüminyum folyo: Sistem Alüminyum. Etiket baskı: lokal matbaa + dijital (50 adet üzeri ekonomik).
+          </div>
+
+          <div class="insight s">
+            <strong>Premium safran ambalaj formülü:</strong> Amber cam mini kavanoz (50–100 ml) + silikon contalı vidalı kapak + kraft kağıt sargı + mat siyah karton kutu + ipek kurdele + QR kod sticker + lab raporu kartı. Maliyet: 25–60 TL/birim. Perakende fiyat etkisi: +50–150 TL marj. <em>Ambalaj satışın yarısı.</em>
+          </div>
+        </div>
+
+        <!-- ────── MARKALAŞMA ────── -->
+        <div id="saf-marka" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Aynı kalitede iki safrandan biri 200 TL/gr, diğeri 450 TL/gr satılıyorsa fark ambalaj + hikâye + güvendir. Marka inşası safran üreticisinin tek gerçek kaldıracıdır.</div>
+
+          <div class="subsec">
+            <div class="subsec-title">5 konumlandırma stratejisi</div>
+            <div class="subsec-desc">Birini seç ya da kombine et.</div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">A · Coğrafi terroir (en güçlü)</div>
+            <div class="row"><span class="rl">Hikaye</span><span class="rv">Belirli bir coğrafyada yetişen</span></div>
+            <div class="row"><span class="rl">Örnek</span><span class="rv">Safranbolu, La Mancha, Mongra</span></div>
+            <div class="row"><span class="rl">İzmir için fırsat</span><span class="rv s">"Ege terroir" anlatısı yeni</span></div>
+            <div class="row"><span class="rl">Marj etkisi</span><span class="rv g">+%30–60</span></div>
+          </div>
+          <div class="card left-green">
+            <div class="card-title">B · Organik &amp; sürdürülebilir</div>
+            <div class="row"><span class="rl">Hikaye</span><span class="rv">Pestisitsiz, doğal</span></div>
+            <div class="row"><span class="rl">Sertifika</span><span class="rv">Tarım Bakanlığı + EU Organic</span></div>
+            <div class="row"><span class="rl">Hedef kitle</span><span class="rv">Bilinçli tüketici, EU/ABD</span></div>
+            <div class="row"><span class="rl">Marj etkisi</span><span class="rv g">+%40–80</span></div>
+          </div>
+          <div class="card left-blue">
+            <div class="card-title">C · Premium gourmet</div>
+            <div class="row"><span class="rl">Hikaye</span><span class="rv">Şef için, restoran için</span></div>
+            <div class="row"><span class="rl">Pazarlama</span><span class="rv">Michelin şef işbirlikleri</span></div>
+            <div class="row"><span class="rl">Hedef kitle</span><span class="rv">Fine dining, gourmet</span></div>
+            <div class="row"><span class="rl">Marj etkisi</span><span class="rv g">+%50–100</span></div>
+          </div>
+          <div class="card left-purple">
+            <div class="card-title">D · Sağlık &amp; nutrasötik</div>
+            <div class="row"><span class="rl">Hikaye</span><span class="rv">Antidepresan, antioksidan</span></div>
+            <div class="row"><span class="rl">Format</span><span class="rv">Kapsül, çay, ekstrakt</span></div>
+            <div class="row"><span class="rl">Hedef kitle</span><span class="rv">Wellness, eczane</span></div>
+            <div class="row"><span class="rl">Marj etkisi</span><span class="rv g">+%100–300 (işlenmiş)</span></div>
+            <div class="row"><span class="rl">Engel</span><span class="rv a">Sağlık beyanı regülasyonu</span></div>
+          </div>
+          <div class="card left-amber">
+            <div class="card-title">E · Yüksek teknoloji / İnovasyon</div>
+            <div class="row"><span class="rl">Hikaye</span><span class="rv">İndoor CEA, IoT, izlenebilir</span></div>
+            <div class="row"><span class="rl">Pazarlama</span><span class="rv">QR ile çiftliğe canlı bağlantı</span></div>
+            <div class="row"><span class="rl">Hedef kitle</span><span class="rv">Tech-savvy genç tüketici</span></div>
+            <div class="row"><span class="rl">Marj etkisi</span><span class="rv g">+%30–50</span></div>
+            <div class="row"><span class="rl">Sinerji</span><span class="rv s">GrowmiLab kimliğiyle uyumlu</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Marka inşa elementleri</div>
+            <div class="row"><span class="rl">Marka adı</span><span class="rv">Akılda kalıcı, EN/TR uyumlu</span></div>
+            <div class="row"><span class="rl">Logo</span><span class="rv">Crocus sativus motifi + tipografi</span></div>
+            <div class="row"><span class="rl">Renk paleti</span><span class="rv">Saffron sarı + koyu zemin</span></div>
+            <div class="row"><span class="rl">Tipografi</span><span class="rv">Serif (klasik) veya modern sans</span></div>
+            <div class="row"><span class="rl">Web sitesi</span><span class="rv">.com.tr + .com</span></div>
+            <div class="row"><span class="rl">Sosyal medya</span><span class="rv">Instagram, LinkedIn, TikTok</span></div>
+            <div class="row"><span class="rl">Marka hikayesi</span><span class="rv">Üretici yüzü + üretim süreci</span></div>
+            <div class="row"><span class="rl">Görsel kimlik</span><span class="rv">Profesyonel ürün fotoğrafı</span></div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">⭐ Marka tescil + IP koruma</div>
+            <div class="row"><span class="rl">Türkiye (TÜRKPATENT)</span><span class="rv">~5.000 TL, 6 ay</span></div>
+            <div class="row"><span class="rl">AB (EUIPO)</span><span class="rv">~1.000 € + 850 €/sınıf</span></div>
+            <div class="row"><span class="rl">Uluslararası (WIPO)</span><span class="rv">Madrid Protokolü</span></div>
+            <div class="row"><span class="rl">Coğrafi işaret</span><span class="rv s">TÜRKPATENT (bölge eligible)</span></div>
+            <div class="row"><span class="rl">Hangi sınıflar?</span><span class="rv">29 (gıda), 30 (baharat), 35 (satış)</span></div>
+          </div>
+
+          <div class="insight s">
+            <strong>İzmir safran markası fırsatı:</strong> Türkiye'de safran markaları ya geleneksel coğrafyalardan (Safranbolu, Erbaa) ya da yatırımcı dilinden (Etiler-Köseoğlu) konuşuyor. Boş alan: <em>"şehirli, modern, izlenebilir, yeni nesil safran"</em>. İzmir bu hikaye için ideal — Ege gastronomi merkezi, Alaçatı/Çeşme premium yaşam kültürü, Ege Üniversitesi akademik bağ.
+          </div>
+        </div>
+
+        <!-- ────── SATIŞ ────── -->
+        <div id="saf-satis" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Safran her satış kanalına uymaz. Kanal seçimi marjı, ölçeği ve marka değerini doğrudan belirler.</div>
+
+          <div class="subsec">
+            <div class="subsec-title">B2C kanallar — perakende</div>
+            <div class="subsec-desc">Yüksek marj, küçük hacim.</div>
+          </div>
+
+          <div class="card left-green">
+            <div class="card-title">Direkt online (kendi web siten)</div>
+            <div class="row"><span class="rl">Marj</span><span class="rv g">En yüksek (%80–90)</span></div>
+            <div class="row"><span class="rl">Komisyon</span><span class="rv g">Sıfır (yalnız ödeme komisyonu)</span></div>
+            <div class="row"><span class="rl">Platform</span><span class="rv">Shopify TR, Wix, WooCommerce</span></div>
+            <div class="row"><span class="rl">Trafik</span><span class="rv">SEO + Instagram + Google Ads</span></div>
+            <div class="row"><span class="rl">Avantaj</span><span class="rv g">Marka kontrolü, müşteri verisi</span></div>
+            <div class="row"><span class="rl">Dezavantaj</span><span class="rv a">Trafik için ayrı yatırım</span></div>
+          </div>
+
+          <div class="card left-amber">
+            <div class="card-title">Marketyerleri (Trendyol, Hepsiburada, Amazon)</div>
+            <div class="row"><span class="rl">Komisyon</span><span class="rv a">%18–25 + KDV</span></div>
+            <div class="row"><span class="rl">Hazır trafik</span><span class="rv g">Çok büyük</span></div>
+            <div class="row"><span class="rl">Fiyat baskısı</span><span class="rv r">Yüksek (rekabet)</span></div>
+            <div class="row"><span class="rl">Marka kontrolü</span><span class="rv a">Sınırlı</span></div>
+            <div class="row"><span class="rl">İdeal kullanım</span><span class="rv">Volüm + bilinirlik</span></div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">Etsy (yurtdışı butik)</div>
+            <div class="row"><span class="rl">Komisyon</span><span class="rv">%6.5 + listing</span></div>
+            <div class="row"><span class="rl">Hedef</span><span class="rv">Yurtdışı butik tüketici</span></div>
+            <div class="row"><span class="rl">Avantaj</span><span class="rv g">El yapımı/butik algısı</span></div>
+            <div class="row"><span class="rl">Dezavantaj</span><span class="rv">Düşük volüm, kargo</span></div>
+          </div>
+
+          <div class="card left-purple">
+            <div class="card-title">Premium gourmet mağazalar</div>
+            <div class="row"><span class="rl">Örnek (TR)</span><span class="rv">Macrocenter, Carrefour Gourmet</span></div>
+            <div class="row"><span class="rl">Örnek (yurtdışı)</span><span class="rv">Dean &amp; DeLuca, Williams Sonoma</span></div>
+            <div class="row"><span class="rl">Komisyon/marj</span><span class="rv">%30–50</span></div>
+            <div class="row"><span class="rl">Engel</span><span class="rv a">Listing süreci uzun</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">B2B kanallar — toptan/kurumsal</div>
+            <div class="subsec-desc">Düşük marj, büyük hacim.</div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">Restoran &amp; otel zincirleri</div>
+            <div class="row"><span class="rl">İzmir/Ege fine dining</span><span class="rv s">Alaçatı, Çeşme, Urla</span></div>
+            <div class="row"><span class="rl">Otel zincirleri</span><span class="rv">Resort &amp; butik otel mutfakları</span></div>
+            <div class="row"><span class="rl">Aylık şef alımı</span><span class="rv">5–50 gr</span></div>
+            <div class="row"><span class="rl">Kontrat</span><span class="rv">Yıllık veya ay-ay</span></div>
+            <div class="row"><span class="rl">Marj</span><span class="rv">B2C'nin %60'ı, tekrarlayan</span></div>
+            <div class="row"><span class="rl">Avantaj</span><span class="rv g">Bilinirlik (menüde adın)</span></div>
+          </div>
+
+          <div class="card left-purple">
+            <div class="card-title">Baharatçı / toptancı</div>
+            <div class="row"><span class="rl">Mısır Çarşısı toptancılar</span><span class="rv">İstanbul ana hub</span></div>
+            <div class="row"><span class="rl">İzmir Kemeraltı</span><span class="rv">Yerel hub</span></div>
+            <div class="row"><span class="rl">Fiyat</span><span class="rv a">Toptan fiyat baskısı</span></div>
+            <div class="row"><span class="rl">İlk bağlantı</span><span class="rv">Numune + ISO raporu</span></div>
+          </div>
+
+          <div class="card left-amber">
+            <div class="card-title">Gıda işleme firmaları</div>
+            <div class="row"><span class="rl">Hazır yemek üreticileri</span><span class="rv">Pilav, biryani sosları</span></div>
+            <div class="row"><span class="rl">Tatlı/şekerleme</span><span class="rv">Lokum, dondurma</span></div>
+            <div class="row"><span class="rl">İçecek üreticileri</span><span class="rv">Saffron çay, kombu, vodka</span></div>
+            <div class="row"><span class="rl">Kalite gereği</span><span class="rv s">ISO Sınıf I/II</span></div>
+            <div class="row"><span class="rl">Hacim</span><span class="rv g">Aylık kg seviyesi</span></div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">Farma + nutrasötik + kozmetik</div>
+            <div class="row"><span class="rl">İlaç firmaları (krosin)</span><span class="rv">Yüksek volüm</span></div>
+            <div class="row"><span class="rl">Takviye/kapsül markaları</span><span class="rv g">En hızlı büyüyen</span></div>
+            <div class="row"><span class="rl">Kozmetik (anti-aging)</span><span class="rv g">Niş ama premium</span></div>
+            <div class="row"><span class="rl">Kalite gereği</span><span class="rv r">Sınıf I + organik + GMP</span></div>
+            <div class="row"><span class="rl">Sözleşme süreci</span><span class="rv">6–12 ay</span></div>
+            <div class="row"><span class="rl">Marj</span><span class="rv s">En yüksek B2B kategorisi</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">B2B pazaryerleri (yurtdışı)</div>
+            <div class="row"><span class="rl">Alibaba.com</span><span class="rv">Asya alıcı havuzu, en büyük</span></div>
+            <div class="row"><span class="rl">Tradologie</span><span class="rv">Spice/baharat odaklı B2B</span></div>
+            <div class="row"><span class="rl">Tridge</span><span class="rv">Tarımsal B2B intelligence</span></div>
+            <div class="row"><span class="rl">Faire (ABD/AB perakende)</span><span class="rv">Butik mağaza alıcıları</span></div>
+            <div class="row"><span class="rl">LinkedIn (direkt)</span><span class="rv s">Soğuk satış için kritik</span></div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">Yıllık içerik takvimi</div>
+            <div class="row"><span class="rl">Eylül–Ekim (ön-sezon)</span><span class="rv">Hasat geri sayımı</span></div>
+            <div class="row"><span class="rl">Ekim–Kasım (hasat zirvesi)</span><span class="rv s">Hasat reels ⭐</span></div>
+            <div class="row"><span class="rl">Kasım–Aralık</span><span class="rv">Backstage, kalite süreci</span></div>
+            <div class="row"><span class="rl">Aralık–Şubat</span><span class="rv">Hediye sezonu, kampanya</span></div>
+            <div class="row"><span class="rl">Mart–Mayıs</span><span class="rv">Tarif, kullanım, sağlık</span></div>
+            <div class="row"><span class="rl">Haziran–Ağustos</span><span class="rv">Sektör röportajları</span></div>
+          </div>
+
+          <div class="insight s">
+            <strong>Kanal stratejisi:</strong> İlk yıl <em>direkt online + Instagram + 5–10 fine dining restoran</em>. Volüm sınırlı, marj maks, marka kontrol. İkinci yıl marketyerleri, üçüncü yıl B2B farma/kozmetik. <em>Hızlı için marketyer, sürdürülebilir için direkt + B2B.</em>
+          </div>
+        </div>
+
+        <!-- ────── İHRACAT ────── -->
+        <div id="saf-ihracat" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Türkiye iç pazarı 5 ton, dünya pazarı 178 ton. Asıl büyüklük dışarıda. Ama ihracat sadece "ürün kargolamak" değil — dokümantasyon, sertifika, gümrük zinciri.</div>
+
+          <div class="card">
+            <div class="card-title">HS (Harmonized System) kodları</div>
+            <div class="row"><span class="rl">Ana kategori (Bölüm 9)</span><span class="rv">Coffee, tea, mate &amp; spices</span></div>
+            <div class="row"><span class="rl">Saffron ana kodu</span><span class="rv s">091020</span></div>
+            <div class="row"><span class="rl">Saffron stigma</span><span class="rv">09102010</span></div>
+            <div class="row"><span class="rl">Saffron toz</span><span class="rv">09102020</span></div>
+            <div class="row"><span class="rl">Diğer formlar</span><span class="rv">09102090</span></div>
+            <div class="row"><span class="rl">Yağ/ekstrakt</span><span class="rv">3301 (esansiyel yağ)</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">İhracat tarifeleri (alıcı ülkede)</div>
+            <div class="row"><span class="rl">Körfez (UAE, Suudi, Katar)</span><span class="rv g">%5 standart</span></div>
+            <div class="row"><span class="rl">ABD</span><span class="rv g">Düşük/sıfır</span></div>
+            <div class="row"><span class="rl">AB ülkeleri</span><span class="rv">Düşük (FTA varsa sıfır)</span></div>
+            <div class="row"><span class="rl">Avustralya</span><span class="rv g">Düşük/sıfır</span></div>
+            <div class="row"><span class="rl">Çin</span><span class="rv">Değişken (FTA önemli)</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">En büyük ithalatçı pazarlar</div>
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <tr><th>Ülke</th><th>Önem</th><th>Fırsat</th></tr>
+                <tr><td class="s">UAE</td><td>Premium, restoran</td><td class="g">Çok yüksek</td></tr>
+                <tr><td class="s">Suudi Arabistan</td><td>Biryani, dini bayram</td><td class="g">Yüksek (helal)</td></tr>
+                <tr><td>İspanya</td><td>Re-export hub</td><td>Orta</td></tr>
+                <tr><td>İtalya</td><td>Risotto, gourmet</td><td class="g">PDO uygun</td></tr>
+                <tr><td>Almanya</td><td>Türk diaspora</td><td class="g">Yüksek</td></tr>
+                <tr><td>ABD</td><td>Iran yaptırım alt.</td><td class="s">Kritik fırsat</td></tr>
+                <tr><td>Çin</td><td>Geleneksel tıp</td><td class="g">Orta-yüksek</td></tr>
+                <tr><td>Japonya</td><td>Niş premium</td><td class="g">Yüksek</td></tr>
+                <tr><td>Avustralya</td><td>Wellness</td><td>Orta</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">İhracat için zorunlu belgeler</div>
+            <div class="row"><span class="rl">Vergi kimlik + Şirket</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">İhracatçı Birlikleri üyeliği</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Gümrük müşaviri</span><span class="rv r">Zorunlu (ilk ihracatta)</span></div>
+            <div class="row"><span class="rl">Ticari fatura</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Çeki listesi (Packing)</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Menşe şahadetnamesi (CoO)</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Phytosanitary</span><span class="rv r">Zorunlu</span></div>
+            <div class="row"><span class="rl">Sağlık sertifikası</span><span class="rv r">Tarım Bakanlığı</span></div>
+            <div class="row"><span class="rl">ISO 3632 lab raporu</span><span class="rv s">B2B için zorunlu</span></div>
+            <div class="row"><span class="rl">Helal</span><span class="rv s">Suudi, BAE, Katar</span></div>
+            <div class="row"><span class="rl">Organik (EU Organic)</span><span class="rv s">AB için</span></div>
+            <div class="row"><span class="rl">FDA kaydı (ABD)</span><span class="rv r">ABD gıda ihracatı</span></div>
+          </div>
+
+          <div class="card left-blue">
+            <div class="card-title">Incoterms — kim ne ödüyor?</div>
+            <div class="row"><span class="rl">EXW (Ex Works)</span><span class="rv">Alıcı her şeyi öder</span></div>
+            <div class="row"><span class="rl">FOB (Free On Board)</span><span class="rv">Üretici limana kadar</span></div>
+            <div class="row"><span class="rl">CIF</span><span class="rv">Üretici varış limanına</span></div>
+            <div class="row"><span class="rl">DDP</span><span class="rv">Üretici varış adresine</span></div>
+            <div class="row"><span class="rl">İlk ihracatta önerilen</span><span class="rv s">FOB veya CIF</span></div>
+          </div>
+
+          <div class="card left-amber">
+            <div class="card-title">Lojistik — pratik bilgiler</div>
+            <div class="row"><span class="rl">Taşıma kategorisi</span><span class="rv">Kırılır + ışıktan koru</span></div>
+            <div class="row"><span class="rl">Küçük hacim</span><span class="rv">Hava kargo + DHL/FedEx</span></div>
+            <div class="row"><span class="rl">Büyük hacim</span><span class="rv">Konteyner deniz/kara</span></div>
+            <div class="row"><span class="rl">Sigorta</span><span class="rv s">Mutlaka</span></div>
+            <div class="row"><span class="rl">Vakumlu paketleme</span><span class="rv g">Toptan ihracatta zorunlu</span></div>
+            <div class="row"><span class="rl">Soğuk zincir</span><span class="rv">Gerek yok (kuru ürün)</span></div>
+          </div>
+
+          <div class="callout cs">
+            <strong>İhracat stratejisi:</strong> İlk yıl Türkiye'deki diaspora + butik markalar üzerinden Almanya/ABD'ye 1–5 kg'lık deneme gönderileri. İkinci yıl UAE/Suudi ihracatçı birlikleri aracılığıyla. Üçüncü yıl AB Organic + Helal sertifikalı serisi.
+          </div>
+
+          <div class="insight s">
+            <strong>TİM + KOSGEB desteği:</strong> Ticaret Bakanlığı <em>"Pazara Giriş Belgeleri Desteği"</em> mevcut — sertifika maliyetlerinin %50'si geri alınabilir. KOSGEB ihracatçı geliştirme programı da uygun.
+          </div>
+        </div>
+
+        <!-- ────── HUKUKİ ────── -->
+        <div id="saf-hukuki" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Safran üretimi yasak değil, ruhsat gerekmiyor. Ama ticari yapmak istiyorsan belge silsilesi var. Doğru sırayla ilerlemek 6 aydan 6 yıla fark eder.</div>
+
+          <div class="card">
+            <div class="card-title">Yasal statü (Türkiye 2026)</div>
+            <div class="row"><span class="rl">Üretim izni</span><span class="rv g">Gerekmiyor — serbest</span></div>
+            <div class="row"><span class="rl">Ruhsat</span><span class="rv g">Zorunlu değil</span></div>
+            <div class="row"><span class="rl">Gıda Kodeksi statü</span><span class="rv">Baharat (pozitif liste)</span></div>
+            <div class="row"><span class="rl">Tohumluk sertifikası</span><span class="rv">Kalite güvence (opsiyonel)</span></div>
+            <div class="row"><span class="rl">Soğan ihracatı</span><span class="rv a">Kotalı (Tarım Bak.)</span></div>
+            <div class="row"><span class="rl">Baharat ihracatı</span><span class="rv g">Serbest</span></div>
+          </div>
+
+          <div class="subsec">
+            <div class="subsec-title">Aşamalı belge silsilesi — sıfırdan ihracatçıya</div>
+          </div>
+
+          <div class="card">
+            <div class="pi">
+              <div class="pi-num saf">1</div>
+              <div class="pi-c">
+                <div class="pi-t">ÇKS kaydı <span class="badge bg">Zorunlu</span></div>
+                <div class="pi-d">Çiftçi Kayıt Sistemi — e-Devlet veya İl Tarım Müdürlüğü. Devlet desteklerine erişim için şart. <em>Süre: 1–2 hafta. Ücret: Yok.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">2</div>
+              <div class="pi-c">
+                <div class="pi-t">Şirket kuruluşu <span class="badge ba">Ticari satış</span></div>
+                <div class="pi-d">Şahıs (~3.000 TL, 1 hafta) veya Limited (~15.000 TL, 2 hafta). NACE: 01.28 (baharat) veya 47.11 (perakende).</div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">3</div>
+              <div class="pi-c">
+                <div class="pi-t">Gıda işletme kayıt <span class="badge ba">İşleme/paketleme</span></div>
+                <div class="pi-d">Tarım ve Orman Bakanlığı'na başvuru. HACCP planı sun. <em>Süre: 1–3 ay. Ücret: ~1.000–3.000 TL.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">4</div>
+              <div class="pi-c">
+                <div class="pi-t">ISO 3632 lab raporu <span class="badge bs">Premium için</span></div>
+                <div class="pi-d">TÜBİTAK MAM, üniversite labları, akrediteli özel labslar. <em>Maliyet: 2.000–5.000 TL/numune.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">5</div>
+              <div class="pi-c">
+                <div class="pi-t">Marka tescili <span class="badge bp">IP koruma</span></div>
+                <div class="pi-d">TÜRKPATENT — marka + logo + 29/30/35 sınıf. <em>Maliyet: ~5.000 TL. Süre: 6–10 ay.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">6</div>
+              <div class="pi-c">
+                <div class="pi-t">Organik sertifikası <span class="badge bg">Premium fiyat</span></div>
+                <div class="pi-d">ETKO, CERES, Imo Control vb. 2 yıl geçiş + 1 yıl gözetim. <em>5.000–15.000 TL/yıl.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">7</div>
+              <div class="pi-c">
+                <div class="pi-t">Helal sertifikası <span class="badge bs">Körfez ihracatı</span></div>
+                <div class="pi-d">HAK akrediteli kuruluşlar: GIMDES, HEDEM, TÜV. Suudi/UAE zorunlu. <em>5.000–15.000 TL. 1–3 ay.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">8</div>
+              <div class="pi-c">
+                <div class="pi-t">İhracatçı Birlikleri <span class="badge ba">İhracat için zorunlu</span></div>
+                <div class="pi-d">İHBİR veya kuru meyve/baharat birliği. <em>Aidat ~5.000 TL/yıl.</em></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">9</div>
+              <div class="pi-c">
+                <div class="pi-t">Coğrafi işaret <span class="badge bs">Sadece Safranbolu</span></div>
+                <div class="pi-d">Safranbolu Esnaf Odası + Kaymakamlık aracılığıyla. İzmir üreticisine geçerli değil — kendi terroir hikayeni inşa et.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout cb">
+            <strong>Pratik öneri:</strong> Hiç olmazsa <em>ÇKS + Şahıs şirketi + ISO 3632 lab raporu</em> üçlüsü olmadan satışa çıkma. Toplam maliyet: ~10.000 TL, süre: 2 ay. Markalaşma + organik + helal sonra eklenir.
+          </div>
+
+          <div class="insight s">
+            <strong>Devlet destekleri (2026):</strong> IPARD III çağrı takvimi — Mayıs (İşleme 30M€), Haziran (Fiziki yatırım 30M€), Nisan (Çiftlik çeşitlendirme 25M€). Hibe %50–75. Genç/kadın girişimci ek puan. Ayrıca: Genç Çiftçi (100K TL hibe), Ziraat genç/kadın kredisi (2.5M TL faizsiz), Tıbbi-aromatik bitki desteği, KOSGEB marka geliştirme.
+          </div>
+        </div>
+
+        <!-- ────── AKSİYON ────── -->
+        <div id="saf-aksiyon" class="itab-section">
+          <div class="sec-desc" style="font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.7;">Tüm bu bilgiyi sindirip 4 aşamalı pratik plana indirgeyelim. Her aşama net çıktılar, net karar noktaları içeriyor.</div>
+
+          <div class="card">
+            <div class="pi">
+              <div class="pi-num saf">1</div>
+              <div class="pi-c">
+                <div class="pi-t">Araştırma + öğrenme <span class="badge bg">0–3 ay · Maliyet ~0</span></div>
+                <div class="pi-d">
+                  <strong>Hedef:</strong> Sahaya çıkmadan önce konuyu derinlemesine anla.<br><br>
+                  • EGESEM topraksız tarım sertifikası tamamla<br>
+                  • SafBox blogu + Erbaa Safran içerikleri sistematik oku<br>
+                  • Amasya/Erbaa üreticisine 1 günlük saha ziyareti planla<br>
+                  • İBB Kent Koleji + topraksiztarımizmir.org sertifika kayıt<br>
+                  • LinkedIn'de "saffron" + "Crocus sativus" hashtag takip<br>
+                  • İlk 50 adet deneme soğanı al (Zengarden ~800 TL)
+                </div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">2</div>
+              <div class="pi-c">
+                <div class="pi-t">Pilot üretim <span class="badge bb">3–10 ay · Maliyet 15–30K TL</span></div>
+                <div class="pi-d">
+                  <strong>Hedef:</strong> Bir tam sezon yaşa, gerçek veriyle yargıla.<br><br>
+                  • 100–200 soğanlık ev tipi pilot (raflı bölme + iklim kontrolü)<br>
+                  • Erbaa Safran'dan kaliteli soğan (kg bazlı) ya da Karaarslan<br>
+                  • Substrat: perlit + cocopeat (steril)<br>
+                  • Sıcaklık + nem sensörü (basit IoT)<br>
+                  • Hasat günlüğü tut<br>
+                  • Kurutma fırını al (ikinci kritik yatırım)<br>
+                  • İlk hasat → ISO 3632 lab raporu çektir<br>
+                  • <strong>Karar anı:</strong> devam mı, vazgeç mi?
+                </div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">3</div>
+              <div class="pi-c">
+                <div class="pi-t">Marka + ticari yapı <span class="badge bp">10–18 ay · Maliyet 30–80K TL</span></div>
+                <div class="pi-d">
+                  <strong>Hedef:</strong> Ürünü pazara hazır hale getir.<br><br>
+                  • ÇKS → Şahıs şirketi → Gıda işletme kayıt<br>
+                  • Marka adı + logo + ambalaj tasarımı (50–100ml amber cam)<br>
+                  • TÜRKPATENT marka tescil başvurusu<br>
+                  • Web sitesi + Instagram + LinkedIn marka hesapları<br>
+                  • İlk B2C satışları (kendi siten + Etsy)<br>
+                  • İzmir'de 5–10 fine dining restoran sıcak temas<br>
+                  • Hasat içerik üretimi (TikTok/Instagram reels)
+                </div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num saf">4</div>
+              <div class="pi-c">
+                <div class="pi-t">Ticari ölçek + ihracat <span class="badge bs">18–36 ay · 100K+ TL (IPARD %50–75 geri)</span></div>
+                <div class="pi-d">
+                  <strong>Hedef:</strong> Sürdürülebilir gelir + ihracat kapısı.<br><br>
+                  • 1.000–5.000 soğanlık ticari ölçek (modüler raf)<br>
+                  • IPARD III başvurusu (Mayıs işleme / Haziran fiziki yatırım)<br>
+                  • Organik sertifikası başvuru (2 yıl geçiş)<br>
+                  • Helal sertifikası (Körfez)<br>
+                  • İhracatçı Birlikleri üyeliği<br>
+                  • İlk ihracat denemeleri (Almanya diaspora, UAE B2B)<br>
+                  • Showroom/atölye günleri (workshop ekonomisi)<br>
+                  • Yan ürün: safran çayı, kapsül, kozmetik
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card left-saffron">
+            <div class="card-title">⭐ Karar noktaları</div>
+            <div class="row"><span class="rl">3. ay sonu</span><span class="rv">Hâlâ heyecanlıyım / fikrim değişti</span></div>
+            <div class="row"><span class="rl">10. ay (1. hasat)</span><span class="rv">ISO Sınıf I/II çıktı / yetersiz</span></div>
+            <div class="row"><span class="rl">18. ay</span><span class="rv">İlk satışlar geldi / pazara erişim zor</span></div>
+            <div class="row"><span class="rl">24. ay</span><span class="rv">Aylık satış sürdürülebilir / zor</span></div>
+            <div class="row"><span class="rl">36. ay</span><span class="rv">İhracat başladı / iç pazara odaklan</span></div>
+          </div>
+
+          <div class="callout cs">
+            <strong>Final değerlendirme:</strong> Safran ciddi bir iş — 3 yıllık taahhüt, 6 haneli yatırım, agresif öğrenme eğrisi. Ama tek bir ürün olarak <em>en yüksek katma değerli</em> tarımsal kalemlerden biri. GrowmiLab'ın "showroom + premium ürün + ihracat hedefi" hikayesine inanıyorsan safran tek başına bu hikayeyi ayakta tutabilir. <strong>İlk yıl tek ürüne bağlanma — paralel geliri olan ürünlerle birlikte yürüt.</strong>
+          </div>
+
+          <div class="insight s">
+            <strong>Sonraki adım önerisi:</strong> Bu raporu okuduktan sonra <em>bir hafta düşün</em>. Eğer hâlâ heyecanın devam ediyorsa: (1) Erbaa Safran'a 1 kg soğan numunesi siparişi (~2.500 TL), (2) EGESEM kayıt formu, (3) Amasya üreticisine ziyaret e-postası. Üç hafta içinde bu üçü olursa, sen safran üreticisi adayısın. Olmazsa, fikir hâlâ olgunlaşıyor — beklemek de doğru karardır.
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -537,19 +1681,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
         <div id="mvp-urun" class="itab-section">
           <div class="card">
             <div class="card-title">Ürün kolu — odak adımlar <span class="badge bb">Yetiştir &amp; sat</span></div>
-            <div class="row"><span class="rl">Hf 1</span><span class="rv">Balkon sistemini devreye al — fesleğen + 1–2 yeşillik ekim</span></div>
+            <div class="row"><span class="rl">Hf 1</span><span class="rv">Balkon sistemini devreye al — pilot ürünle ilk ekim</span></div>
             <div class="row"><span class="rl">Hf 2</span><span class="rv">5 restoran / kafe ile gayri resmi görüşme — fiyat, kaynak, talep</span></div>
             <div class="row"><span class="rl">Hf 3</span><span class="rv">İlk hasat + maliyet/kg hesapla, finansal modeli güncelle</span></div>
             <div class="row"><span class="rl">Hf 4–5</span><span class="rv">İlk küçük satış denemesi — pazar, komşu, Instagram</span></div>
             <div class="row"><span class="rl">Hf 7–9</span><span class="rv">Veriye göre: hangi ürün çalıştı → pivot ya da derinleş</span></div>
           </div>
           <div class="card">
-            <div class="card-title">Yetiştirme parametreleri</div>
-            <div class="row"><span class="rl">Optimum sıcaklık</span><span class="rv">20–28 °C</span></div>
-            <div class="row"><span class="rl">Aydınlanma</span><span class="rv">14–16 saat/gün</span></div>
-            <div class="row"><span class="rl">pH aralığı</span><span class="rv">5.5 – 6.5</span></div>
-            <div class="row"><span class="rl">EC değeri</span><span class="rv">1.0 – 1.6 mS/cm</span></div>
-            <div class="row"><span class="rl">Hasat süresi (hidroponik)</span><span class="rv">25–30 gün</span></div>
+            <div class="card-title">Pilot ürün seçim kriterleri</div>
+            <div class="row"><span class="rl">Hasat döngüsü</span><span class="rv">Kısa (hızlı geri bildirim)</span></div>
+            <div class="row"><span class="rl">Topraksız uyumluluğu</span><span class="rv">NFT / DWC / substrat</span></div>
+            <div class="row"><span class="rl">Pazar talebi (İzmir)</span><span class="rv">Doğrulanmış alıcı var</span></div>
+            <div class="row"><span class="rl">Birim fiyat / kg</span><span class="rv">Marj testine uygun</span></div>
+            <div class="row"><span class="rl">Öğrenme değeri</span><span class="rv">Sistem ve süreç öğretir</span></div>
+            <div class="row"><span class="rl">Ölçeklendirme potansiyeli</span><span class="rv">Ticari modele taşınabilir</span></div>
           </div>
           <div class="callout cg"><strong>İzmir avantajı:</strong> Nisan–Ekim arası balkon sistemi LED maliyeti olmadan çalışır. İlk hasat bütçeyi düşürür.</div>
         </div>
@@ -593,11 +1738,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="model-card-title">Ürün satışı</div>
             </div>
           </div>
-          <div class="model-card-desc">Seçilen sistem üzerinden yetiştirilen besinlerin doğrudan satışı. Tekrarlayan gelir, düşük edinim maliyeti.</div>
+          <div class="model-card-desc">Seçilen sistem üzerinden yetiştirilen ürünlerin doğrudan satışı. Ürün yelpazesi açık — veriye dayalı belirlenecek.</div>
           <div class="model-card-items">
-            <div class="model-card-item">Yaprak yeşillikleri (fesleğen, roka, nane…)</div>
+            <div class="model-card-item">Yaprak yeşillikleri</div>
             <div class="model-card-item">Aromatik bitkiler</div>
             <div class="model-card-item">Mikroyeşillikler</div>
+            <div class="model-card-item">Yüksek katma değerli özel ürünler</div>
             <div class="model-card-item">Restoran, kafe, pazar, doğrudan tüketici</div>
           </div>
         </div>
@@ -964,7 +2110,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
             <div class="edu-section">
               <div class="edu-section-label">Eksileri</div>
               <ul class="edu-cons">
-                <li>Ürün-spesifik (fesleğen, yeşillik) reçete vermiyor</li>
+                <li>Ürün-spesifik yetiştirme reçetesi vermiyor</li>
                 <li>Network / sınıf arkadaşı yok — pure eğitim deneyimi</li>
                 <li>Şifre olarak T.C. kimlik kullanımı zayıf güvenlik</li>
               </ul>
@@ -1281,7 +2427,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
                 <div class="pi-t">Şimdi — Temel kurma <span class="badge bg">0–2 ay</span></div>
                 <p class="pi-d" style="margin-bottom:6px;">Sıfır maliyetli temel — eğitim + pratik kurulum eş zamanlı.</p>
                 <div class="row"><span class="rl">EGESEM topraksız tarım programına kayıt</span><span class="rv">Asenkron</span></div>
-                <div class="row"><span class="rl">Kuleponic kurulumunu tamamla, ilk fesleğen ekim</span><span class="rv">Pratik</span></div>
+                <div class="row"><span class="rl">Sistem kurulumunu tamamla, pilot üretime başla</span><span class="rv">Pratik</span></div>
                 <div class="row"><span class="rl">Hidroponik Türkiye YouTube kanalı sistematik izle</span><span class="rv">Sürekli</span></div>
                 <div class="row"><span class="rl">İBB Kent Koleji + topraksiztarımizmir.org bilgi formu</span><span class="rv">Kayıt</span></div>
                 <div class="row"><span class="rl">LinkedIn topraksız tarım hashtag'lerini takibe al</span><span class="rv">Network</span></div>
@@ -1306,7 +2452,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
                 <p class="pi-d" style="margin-bottom:6px;">Sektörde isim duyurma + ilk B2B temaslar.</p>
                 <div class="row"><span class="rl">GROWTECH Antalya 2026 — ücretsiz ziyaretçi</span><span class="rv">24-27 Kasım</span></div>
                 <div class="row"><span class="rl">LinkedIn'de Kuleponic kurulum hikâyen — içerik</span><span class="rv">Marka</span></div>
-                <div class="row"><span class="rl">İzmir restoran/kafe haritası, taze fesleğen alımcı listesi</span><span class="rv">Satış</span></div>
+                <div class="row"><span class="rl">İzmir restoran/kafe haritası, hedef alıcı listesi</span><span class="rv">Satış</span></div>
                 <div class="row"><span class="rl">Modern Seracılık Zirvesi 2026 katılım</span><span class="rv">Mart</span></div>
                 <div class="row"><span class="rl">TKDK IPARD III veya Ziraat genç/kadın çiftçi başvurusu</span><span class="rv">Hibe</span></div>
               </div>
@@ -1344,7 +2490,7 @@ const ADMIN_PASS = 'Hayeldaş_2026';
 const STORE = 'growmilab_v3';
 
 const STEPS = [
-  {id:'s1',week:'Hf 1',text:'Balkon sistemini devreye al — fesleğen + 1–2 yeşillik ekim',tag:'u'},
+  {id:'s1',week:'Hf 1',text:'Balkon sistemini devreye al — pilot ürünle ilk ekim',tag:'u'},
   {id:'s2',week:'Hf 1',text:'3 rakip / referans sistemi incele — fiyat, tasarım, müşteri yorumu',tag:'s'},
   {id:'s3',week:'Hf 2',text:"İzmir'de 5 restoran / kafe ile gayri resmi görüşme — ne alıyorlar, nereden, ne kadar ödüyorlar",tag:'u'},
   {id:'s4',week:'Hf 2',text:'Kendi kurulum deneyimini belgele — hangi adımlar zor, hangi bilgi eksikti',tag:'s'},
