@@ -52,7 +52,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .nav-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:99px;border:none;background:transparent;color:var(--text3);cursor:pointer;transition:color .15s,background .15s;white-space:nowrap;}
 .nav-btn:hover{color:var(--text2);}
 .nav-btn.active{background:var(--surface2);color:var(--text);border:0.5px solid var(--border2);}
-
 .topbar-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .topbar-meta{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace;}
 #admin-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:99px;border:0.5px solid var(--border2);background:transparent;color:var(--text3);cursor:pointer;transition:all .15s;}
@@ -84,7 +83,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .view{display:none;}.view.active{display:block;}
 
 /* ─── HOME ─── */
-/* ─── HOME ─── */
 .home-wrapper{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:32px;align-items:start;}
 .home-left{min-width:0;display:flex;flex-direction:column;gap:24px;}
 .home-right{position:sticky;top:72px;}
@@ -101,10 +99,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .home-h1{font-size:clamp(32px,5vw,42px);font-weight:300;line-height:1.12;letter-spacing:-.02em;margin-bottom:24px;}
 .home-h1 em{font-style:normal;color:var(--green);}
 .home-lead{font-size:16px;color:var(--text2);line-height:1.75;max-width:480px;margin-bottom:32px;}
-
 .home-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .home-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:99px;border:0.5px solid var(--border2);color:var(--text3);}
-
 .home-cards{display:grid;grid-template-columns:1fr;gap:10px;}
 .home-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;cursor:pointer;transition:border-color .2s,background .2s;display:grid;grid-template-columns:36px 1fr;column-gap:16px;row-gap:3px;}
 .home-card:hover{border-color:var(--border2);background:var(--surface2);}
@@ -112,18 +108,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .home-card-label{grid-column:2;grid-row:1;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
 .home-card-title{grid-column:2;grid-row:2;font-size:14px;font-weight:500;color:var(--text);}
 .home-card-desc{grid-column:2;grid-row:3;font-size:12px;color:var(--text2);line-height:1.55;}
-
 .home-manifesto{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-xl);padding:32px;}
 .home-manifesto-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
 .home-manifesto-text{font-size:16px;font-weight:300;line-height:1.7;color:var(--text2);}
 .home-manifesto-text strong{color:var(--text);font-weight:400;}
-
 .home-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
 .home-stat{background:var(--surface);padding:18px 16px;}
 .home-stat-val{font-family:'DM Mono',monospace;font-size:22px;font-weight:300;color:var(--text);margin-bottom:4px;letter-spacing:-.02em;}
 .home-stat-val span{font-size:13px;color:var(--green);}
 .home-stat-label{font-size:11px;color:var(--text2);line-height:1.4;}
-
 @media(max-width:760px){
   .home-manifesto{padding:26px 20px;}
   .home-manifesto-text{font-size:15px;}
@@ -247,6 +240,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .callout{border:0.5px solid;border-radius:var(--radius);padding:12px 14px;font-size:13px;line-height:1.6;margin-top:10px;}
 .cg{background:var(--green-bg);color:var(--green-light);border-color:var(--green-dim);}
 .ca{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-dim);}
+.cb{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-dim);}
 .callout strong{font-weight:600;}
 
 /* MODEL page */
@@ -282,93 +276,85 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .empty-title{font-size:14px;font-weight:500;margin-bottom:8px;}
 .empty-desc{font-size:13px;color:var(--text3);line-height:1.6;}
 .empty-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--surface2);border:0.5px solid var(--border2);color:var(--text3);margin-top:14px;}
-
 .page-footer{text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.08em;padding-top:20px;}
 
+/* ─── TRAINING-specific additions ─── */
+/* Compare card — quick comparison view */
+.cmp-card{background:var(--surface2);border:0.5px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:8px;border-left:2px solid transparent;}
+.cmp-card.rec{border-left-color:var(--green);}
+.cmp-card.alt{border-left-color:var(--blue);}
+.cmp-card.warn{border-left-color:var(--amber);}
+.cmp-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.35;}
+.cmp-tag{font-size:11px;color:var(--text3);margin-bottom:10px;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;}
+@media(min-width:520px){.cmp-grid{grid-template-columns:repeat(4,1fr);}}
+.cmp-cell{min-width:0;}
+.cmp-cell-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.cmp-cell-val{font-size:12px;color:var(--text);font-weight:500;line-height:1.35;word-break:break-word;}
+.cmp-cell-val.g{color:var(--green);}
+
+/* Education detail card */
+.edu-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;border-left:2px solid var(--border2);}
+.edu-card.rec{border-left-color:var(--green);}
+.edu-card.alt{border-left-color:var(--blue);}
+.edu-card.warn{border-left-color:var(--amber);}
+.edu-card.purple{border-left-color:var(--purple);}
+.edu-head{margin-bottom:12px;}
+.edu-title{font-size:14px;font-weight:500;color:var(--text);line-height:1.35;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.edu-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.04em;line-height:1.5;}
+.edu-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:0.5px solid var(--border);font-size:12px;gap:14px;}
+.edu-row:first-child{padding-top:0;}
+.edu-row:last-of-type{border-bottom:none;padding-bottom:0;}
+.edu-row-label{color:var(--text2);flex:1;min-width:0;}
+.edu-row-val{font-weight:500;color:var(--text);text-align:right;flex-shrink:0;max-width:62%;line-height:1.4;font-size:12px;}
+.edu-row-val.g{color:var(--green);}
+.edu-section{margin-top:12px;}
+.edu-section-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.edu-pros, .edu-cons{list-style:none;padding:0;margin:0;}
+.edu-pros li, .edu-cons li{font-size:12px;line-height:1.6;color:var(--text2);padding-left:14px;position:relative;margin-bottom:3px;}
+.edu-pros li:before{content:'+';position:absolute;left:0;color:var(--green);font-weight:600;}
+.edu-cons li:before{content:'−';position:absolute;left:0;color:var(--red);font-weight:600;}
+.edu-strategy{background:var(--surface2);border-radius:var(--radius);padding:11px 13px;margin-top:12px;font-size:12px;line-height:1.65;color:var(--text2);border-left:2px solid var(--purple);}
+.edu-strategy strong{color:var(--text);font-weight:500;}
+.edu-link{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;color:var(--blue);margin-top:10px;text-decoration:none;letter-spacing:.04em;border-bottom:0.5px solid var(--blue-dim);padding-bottom:2px;word-break:break-all;transition:color .15s,border-color .15s;}
+.edu-link:hover{color:var(--blue);border-color:var(--blue);}
+
+/* ─── MOBILE ─── */
 @media(max-width:720px){
-  /* Topbar: single row, hamburger menu */
-  .topbar{
-    height:52px;
-    padding:0 14px;
-    gap:12px;
-  }
+  .topbar{height:52px;padding:0 14px;gap:12px;}
   .topbar-logo{order:1;font-size:11px;}
   .topbar-right{order:2;margin-left:auto;gap:8px;}
   .topbar-meta{display:none;}
   #admin-btn{font-size:9px;padding:4px 9px;}
   #menu-btn{display:flex;}
-
-  /* Nav becomes dropdown panel */
-  .nav{
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    flex-direction:column;
-    background:var(--surface);
-    border-bottom:0.5px solid var(--border2);
-    padding:8px;
-    gap:2px;
-    display:none;
-    z-index:99;
-    box-shadow:0 12px 32px rgba(0,0,0,0.45);
-    max-height:calc(100vh - 52px);
-    overflow-y:auto;
-  }
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:0.5px solid var(--border2);padding:8px;gap:2px;display:none;z-index:99;box-shadow:0 12px 32px rgba(0,0,0,0.45);max-height:calc(100vh - 52px);overflow-y:auto;}
   .nav.open{display:flex;}
-  .nav-btn{
-    width:100%;
-    text-align:left;
-    padding:13px 16px;
-    font-size:11px;
-    border-radius:8px;
-  }
-
-  /* Hide tower image on mobile */
+  .nav-btn{width:100%;text-align:left;padding:13px 16px;font-size:11px;border-radius:8px;}
   .home-right{display:none;}
   .home-wrapper{grid-template-columns:1fr;gap:0;}
-
-  /* Page padding */
   .page{padding:24px 16px 64px;}
-
-  /* Home hero */
   .home-hero{padding:20px 0 32px;}
   .home-h1{font-size:clamp(30px,7vw,40px);margin-bottom:20px;}
   .home-lead{font-size:15px;margin-bottom:24px;}
-
-  /* Widget headers */
   .widget-hdr{padding:14px 16px;}
   .widget-title{font-size:12px;}
   .widget-body{padding:16px;}
-
-  /* Section titles */
   .section-title{font-size:20px;}
   .section-desc{font-size:12px;margin-bottom:24px;}
-
-  /* Checklist: tighter */
   .cl-item{padding:10px 14px;gap:10px;}
   .cl-text{font-size:12.5px;}
   .cl-tag{display:none;}
-
-  /* Inner tabs: scrollable */
   .itab-bar{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;}
   .itab-bar::-webkit-scrollbar{display:none;}
   .itab-btn{flex-shrink:0;}
-
-  /* Phase cards tighter */
   .phase-card{padding:12px 14px;}
   .phase-title{font-size:12px;}
   .phase-sub{font-size:11px;}
-
-  /* Model cards */
   .model-card{padding:20px 18px;}
-
-  /* Lock screen */
   .lock-card{padding:32px 28px;margin:16px;}
   .lock-title{font-size:20px;}
+  .edu-card{padding:16px 18px;}
 }
-
-/* Very narrow phones */
 @media(max-width:400px){
   .topbar-logo{font-size:10px;letter-spacing:.14em;}
   .home-h1{font-size:28px;}
@@ -404,7 +390,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 <!-- ─── APP ─── -->
 <div id="app">
-
   <div class="topbar">
     <div class="topbar-logo">GrowmiLab</div>
     <nav class="nav">
@@ -413,6 +398,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <button class="nav-btn" onclick="nav('model',this)">Model</button>
       <button class="nav-btn" onclick="nav('research',this)">Research</button>
       <button class="nav-btn" onclick="nav('finance',this)">Finance</button>
+      <button class="nav-btn" onclick="nav('training',this)">Training</button>
     </nav>
     <div class="topbar-right">
       <div class="topbar-meta">İzmir · 2026</div>
@@ -430,7 +416,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div id="view-home" class="view active">
       <div class="home-wrapper">
         <div class="home-left">
-
           <div class="home-hero">
             <div class="home-eyebrow">GrowmiLab · İzmir · 2026</div>
             <h1 class="home-h1">Tarım artık bir<br><em>tasarım meselesi.</em></h1>
@@ -443,7 +428,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <span class="home-tag">İzmir · 2026</span>
             </div>
           </div>
-
           <div class="home-stats">
             <div class="home-stat">
               <div class="home-stat-val">25–30<span> gün</span></div>
@@ -458,7 +442,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="home-stat-label">MVP süre hedefi</div>
             </div>
           </div>
-
           <div class="home-manifesto">
             <div class="home-manifesto-label">Vizyon</div>
             <p class="home-manifesto-text">
@@ -469,7 +452,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               Üretim tesisi, aynı zamanda canlı demo alanı.
             </p>
           </div>
-
           <div class="home-cards">
             <div class="home-card" onclick="nav('mvp', document.querySelector('.nav-btn:nth-child(2)'))">
               <div class="home-card-icon" style="background:var(--blue-bg);border-color:var(--blue-dim);">
@@ -495,10 +477,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
               <div class="home-card-title">Research</div>
               <div class="home-card-desc">Devlet destekleri, ürün benchmarkları ve sistem analizleri.</div>
             </div>
+            <div class="home-card" onclick="nav('training', document.querySelector('.nav-btn:nth-child(6)'))">
+              <div class="home-card-icon" style="background:var(--purple-bg);border-color:var(--purple-dim);">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5l6-3 6 3-6 3-6-3z" stroke="#c4a8f0" stroke-width="1.3" stroke-linejoin="round"/><path d="M4 7v3.5c0 1 1.8 2 4 2s4-1 4-2V7" stroke="#c4a8f0" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              <div class="home-card-label">Eğitim &amp; ağ</div>
+              <div class="home-card-title">Training</div>
+              <div class="home-card-desc">11 eğitim seçeneği, sektör ağları ve aşamalı strateji yol haritası.</div>
+            </div>
           </div>
-
         </div>
-
         <aside class="home-right">
           <div class="home-model">
             <img id="tower-img" src="./tower.png" alt="Hidroponik tower">
@@ -518,7 +506,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           <div class="widget-title">Aşamalar &amp; haftalık adımlar</div>
           <div class="widget-meta">9 hafta · 2 iş kolu</div>
         </div>
-
         <div class="itab-bar">
           <button class="itab-btn active" onclick="itab('mvp','genel',this)">Genel Bakış</button>
           <button class="itab-btn" onclick="itab('mvp','urun',this)">Ürün Kolu</button>
@@ -595,7 +582,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="section-desc">Üç paralel iş kolu — ürün satışı, sistem satışı ve demo çiftlik sinerjisi. Her kol diğerini besler.</div>
 
       <div class="model-grid">
-
         <!-- Kol 1: Ürün satışı -->
         <div class="model-card">
           <div class="model-card-head">
@@ -685,7 +671,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
             <div class="model-card-item">Eğitim / workshop potansiyeli</div>
           </div>
         </div>
-
       </div>
 
       <div class="widget">
@@ -715,7 +700,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="section-title">Veri &amp; analiz merkezi</div>
       <div class="section-desc">Devlet destekleri, ürün benchmarkları, sistem analizleri ve rekabet araştırmaları burada toplanır.</div>
 
-      <!-- Devlet destekleri mevcut içerik -->
       <div class="widget" style="margin-bottom:16px;">
         <div class="widget-hdr"><div class="widget-title">Devlet destekleri</div><div class="widget-meta">2025–2026</div></div>
         <div class="widget-body">
@@ -734,7 +718,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
         </div>
       </div>
 
-      <!-- Placeholder: ürün benchmark -->
       <div class="empty-state">
         <div class="empty-icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v14M2 9h14" stroke="var(--text3)" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -762,7 +745,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="section-title">Maliyet &amp; gelir modeli</div>
       <div class="section-desc">Yapılan harcamalar, maliyet hesaplamaları, destekler ve gelir projeksiyonları burada toplanır.</div>
 
-      <!-- Mevcut maliyet verisi -->
       <div class="widget">
         <div class="widget-hdr"><div class="widget-title">Başlangıç maliyet modeli</div><div class="widget-meta">Tahmini · Nisan 2025</div></div>
         <div class="widget-body">
@@ -812,14 +794,554 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       </div>
     </div>
 
+    <!-- ══════════ TRAINING ══════════ -->
+    <div id="view-training" class="view">
+      <div class="section-eyebrow">Eğitim &amp; Network</div>
+      <div class="section-title">Topraksız tarım — eğitim, network &amp; satış</div>
+      <div class="section-desc">11 eğitim/kaynağın karşılaştırması, sektör ağları ve aşamalı strateji yol haritası. Devlet desteği başvurularında ekstra koz oluşturacak faktörler.</div>
+
+      <div class="widget">
+        <div class="widget-hdr">
+          <div class="widget-title">Eğitim seçenekleri &amp; sektör ağı</div>
+          <div class="widget-meta">11 kaynak · Türkiye 2026</div>
+        </div>
+        <div class="itab-bar">
+          <button class="itab-btn active" onclick="itab('tr','cmp',this)">Karşılaştırma</button>
+          <button class="itab-btn" onclick="itab('tr','akademik',this)">Akademik</button>
+          <button class="itab-btn" onclick="itab('tr','ozel',this)">Özel</button>
+          <button class="itab-btn" onclick="itab('tr','net',this)">Network &amp; Strateji</button>
+        </div>
+
+        <!-- ────── KARŞILAŞTIRMA ────── -->
+        <div id="tr-cmp" class="itab-section active">
+
+          <div class="cmp-card rec">
+            <div class="cmp-name">Ege Üniversitesi EGESEM <span class="badge bg">Önerilen</span></div>
+            <div class="cmp-tag">İzmir · Asenkron online · Prof. Dr. Ayşe Gül</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val g">Ücretsiz</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Esnek</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">e-Devlet · Ege Ü.</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">TKDK / Ziraat ✓</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card rec">
+            <div class="cmp-name">İBB Kent Koleji + Ege Güneş Enstitüsü <span class="badge bg">Önerilen</span></div>
+            <div class="cmp-tag">Dikili / İzmir · Teorik + uygulamalı + girişimcilik</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val g">Ücretsiz</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">~96 sa / 2 ay</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">İBB · MEB</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Fizibilite + satış ✓</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">İzmir Meslek Fabrikası (İBB)</div>
+            <div class="cmp-tag">EVKA-4 Bornova · Yüz yüze sınıf eğitimi</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val g">Ücretsiz</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Modüler</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">MEB onaylı</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Bağlı: kontenjan</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">Halk Eğitim Merkezi (e-Yaygın)</div>
+            <div class="cmp-tag">İzmir ilçeleri · MEB resmi yaygın eğitim</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val g">Ücretsiz</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Kursa göre</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">MEB e-Devlet</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Tarımsal modül var</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">İTÜSEM Kentte Topraksız Tarım</div>
+            <div class="cmp-tag">İstanbul · 2 gün, kentsel tarım odaklı</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">İTÜSEM'den</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">10 saat</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">İTÜ üniversite</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">İTÜ markası</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">İAÜ SEM + Kibele Projekt</div>
+            <div class="cmp-tag">İstanbul · Sınıf + işletme sera ziyareti</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">İAÜ'den</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">2 gün</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">Üniversite</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Saha tecrübesi</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card warn">
+            <div class="cmp-name">Anadolu Eğitim Akademisi <span class="badge ba">İncele</span></div>
+            <div class="cmp-tag">Ankara · MEB özel kurum · Canlı + asenkron</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">7.200 ₺</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">5 hafta</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">MEB özel kurum</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Doğrulat → MEB</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">Eef Akademi · Tarımcan · TEA</div>
+            <div class="cmp-tag">Online platformlar · Üniversite işbirlikli</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">~2–4 bin ₺</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Asenkron</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">Üniversite</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Geçerli</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card">
+            <div class="cmp-name">Online Anka (200 saat)</div>
+            <div class="cmp-tag">Online · Adıgüzel MYO işbirlikli</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">Anka'dan</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">200 saat</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">Üniversite</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Geçerli</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card alt">
+            <div class="cmp-name">Hidroponik Türkiye <span class="badge bb">Pratik</span></div>
+            <div class="cmp-tag">Tedarikçi · YouTube + birebir teknik destek</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val g">Ücretsiz</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Sürekli</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">Yok</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">Pratik kurulum</div></div>
+            </div>
+          </div>
+
+          <div class="cmp-card" style="border-left-color:var(--purple);">
+            <div class="cmp-name">SERA-BİR Derneği <span class="badge bp">Network</span></div>
+            <div class="cmp-tag">Sektör derneği · Modern Seracılık Zirvesi</div>
+            <div class="cmp-grid">
+              <div class="cmp-cell"><div class="cmp-cell-label">Ücret</div><div class="cmp-cell-val">Üyelik</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Süre</div><div class="cmp-cell-val">Sürekli</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Sertifika</div><div class="cmp-cell-val">Yok</div></div>
+              <div class="cmp-cell"><div class="cmp-cell-label">Devlet kozu</div><div class="cmp-cell-val">B2B + ihracat</div></div>
+            </div>
+          </div>
+
+          <div class="insight" style="margin-top:14px;"><strong>Karar mantığı:</strong> İlk üç (EGESEM, İBB Kent Koleji, Hidroponik Türkiye) hiçbir maliyet olmadan birden fazla boyutu kapsar — sertifika, satış stratejisi, pratik kurulum desteği. Ücretli seçenekler ancak çok özel bir ihtiyaç (canlı sınıf etkileşimi, sektörel network) için mantıklı.</div>
+        </div>
+
+        <!-- ────── AKADEMİK ────── -->
+        <div id="tr-akademik" class="itab-section">
+
+          <div class="edu-card rec">
+            <div class="edu-head">
+              <div class="edu-title">Ege Üniversitesi EGESEM <span class="badge bg">İlk başla</span></div>
+              <div class="edu-meta">Eğitmen: Prof. Dr. Ayşe Gül · Koord.: Prof. Dr. Şafak Ceylan</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val g">Ücretsiz</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">Asenkron online video</span></div>
+            <div class="edu-row"><span class="edu-row-label">Süre / esneklik</span><span class="edu-row-val">Tamamen kişisel tempo</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">e-Devlet'te "Ege Sertifika"</span></div>
+            <div class="edu-row"><span class="edu-row-label">Şartlar</span><span class="edu-row-val">16 yaş üstü · 70+ puan · 2 hak</span></div>
+            <div class="edu-row"><span class="edu-row-label">Müfredat</span><span class="edu-row-val">Su/substrat kültürü, besin çözeltisi, EC/pH</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Türkiye'nin topraksız tarım ders kitabını yazan akademisyen</li>
+                <li>TKDK IPARD III ve Ziraat genç/kadın çiftçi başvurusunda kabul</li>
+                <li>Sertifikanın internet üzerinden anında doğrulanabilirliği</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Ürün-spesifik (fesleğen, yeşillik) reçete vermiyor</li>
+                <li>Network / sınıf arkadaşı yok — pure eğitim deneyimi</li>
+                <li>Şifre olarak T.C. kimlik kullanımı zayıf güvenlik</li>
+              </ul>
+            </div>
+            <div class="edu-strategy">
+              <strong>GrowmiLab için kullanım:</strong> Kuleponic kurulumla paralel başla. Müfredattaki her konuyu kendi sistem deneyiminle eşleştir — örneğin "besin çözelti hesabı" dersini A+B çözeltinin EC değerini takip ederek pekiştir. Sertifika TKDK başvurusuna eklenecek mesleki yeterlilik belgesi olur.
+            </div>
+            <a class="edu-link" href="https://egesem.ege.edu.tr/urun/topraksiz-tarim-egitimi-sertifika-programi/" target="_blank" rel="noopener">egesem.ege.edu.tr →</a>
+          </div>
+
+          <div class="edu-card rec">
+            <div class="edu-head">
+              <div class="edu-title">İBB Kent Koleji + Ege Güneş Enstitüsü <span class="badge bg">Satış için kritik</span></div>
+              <div class="edu-meta">topraksiztarimizmir.org · Dikili Belediyesi ortak</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val g">Ücretsiz</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">Teorik + uygulamalı + danışmanlık</span></div>
+            <div class="edu-row"><span class="edu-row-label">Süre</span><span class="edu-row-val">~96 saat / 2 ay</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">İBB · MEB onaylı</span></div>
+            <div class="edu-row"><span class="edu-row-label">Modüller</span><span class="edu-row-val">40 sa teknik · 24 sa girişimcilik · 32 sa satıcılık</span></div>
+            <div class="edu-row"><span class="edu-row-label">Bonus</span><span class="edu-row-val">Demo serada uygulama (Foça, Dikili)</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Türkiye'de tek: girişimcilik + satıcılık modülü dahil program</li>
+                <li>İzmir Kalkınma Ajansı destekli — yerel ekosisteme kapı</li>
+                <li>Demo sera + canlı uygulama — soyut bilgi değil pratik</li>
+                <li>Danışmanlık ofisi: fizibilite + fon kaynağı eşleştirme</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Dönem açılışına bağlı, sürekli kayıt değil</li>
+                <li>Dikili / Foça lokasyonlarına ulaşım zorunlu</li>
+                <li>Kontenjan rekabeti olabilir</li>
+              </ul>
+            </div>
+            <div class="edu-strategy">
+              <strong>GrowmiLab için kullanım:</strong> Programın 24 saatlik girişimcilik+fizibilite ve 32 saatlik açık alan satıcılığı modülleri tam olarak hibrit (sistem+ürün satışı) modelin için kritik girdiler. Demo sera ziyaretleri showroom modelin için referans noktası olur.
+            </div>
+            <a class="edu-link" href="https://www.topraksiztarimizmir.org/" target="_blank" rel="noopener">topraksiztarimizmir.org →</a>
+          </div>
+
+          <div class="edu-card alt">
+            <div class="edu-head">
+              <div class="edu-title">İzmir Meslek Fabrikası — Topraksız Tarım Kursu</div>
+              <div class="edu-meta">EVKA-4 Bornova · İzmir Büyükşehir Belediyesi</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val g">Ücretsiz</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">Yüz yüze sınıf eğitimi</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">MEB onaylı</span></div>
+            <div class="edu-row"><span class="edu-row-label">Şartlar</span><span class="edu-row-val">16 yaş üstü · gerekli belgeler</span></div>
+            <div class="edu-row"><span class="edu-row-label">Telefon</span><span class="edu-row-val">0 232 293 40 60</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Yüz yüze öğrenme — sorular anında cevaplanır</li>
+                <li>Aynı ilgi alanından sınıf arkadaşları → potansiyel iş ortağı</li>
+                <li>İzmir merkezli, ulaşım kolaylığı</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Kurs yıl boyu açılmıyor — başlangıç tarihi bekleme</li>
+                <li>Müfredat detayı önceden tam yayımlanmamış</li>
+              </ul>
+            </div>
+            <a class="edu-link" href="https://www.izmir.bel.tr/meslek-fabrikasi" target="_blank" rel="noopener">izmir.bel.tr/meslek-fabrikasi →</a>
+          </div>
+
+          <div class="edu-card alt">
+            <div class="edu-head">
+              <div class="edu-title">Halk Eğitim Merkezleri (HEM) — e-Yaygın MEB</div>
+              <div class="edu-meta">İzmir tüm ilçeler · Devletin asıl yaygın eğitim sistemi</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val g">Ücretsiz</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">Yüz yüze, kurs bazlı</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">MEB e-Devlet · doğrudan tanımlı</span></div>
+            <div class="edu-row"><span class="edu-row-label">Başvuru</span><span class="edu-row-val">e-Devlet → e-Yaygın sistemi</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Sertifikanın e-Devlet'teki en standart, en sorgulanabilir hali</li>
+                <li>Mahalle bazında ulaşım kolaylığı</li>
+                <li>İlgili tarımsal modüller (tıbbi/aromatik bitki, organik tarım)</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>"Topraksız tarım" özel modülü her HEM'de açılmıyor</li>
+                <li>Kurs açılış kontenjana ve eğitmen müsaitliğine bağlı</li>
+              </ul>
+            </div>
+            <a class="edu-link" href="https://e-yaygin.meb.gov.tr" target="_blank" rel="noopener">e-yaygin.meb.gov.tr →</a>
+          </div>
+
+          <div class="edu-card purple">
+            <div class="edu-head">
+              <div class="edu-title">İTÜSEM — Sürdürülebilirlikte İnovasyon: Kentte Topraksız Tarım</div>
+              <div class="edu-meta">İstanbul Teknik Üniversitesi · Çevre Uyg-Ar Merkezi</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val">İTÜSEM'den sor</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">2 gün yüz yüze</span></div>
+            <div class="edu-row"><span class="edu-row-label">Süre</span><span class="edu-row-val">10 saat (5+5)</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">İTÜ üniversite onaylı</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>İTÜ markası — özellikle B2B'de güven sinyali</li>
+                <li>Kentsel tarım odaklı: balkon/kompakt sistemler için uygun</li>
+                <li>Profesyonel network erişimi (mühendis, mimar, yatırımcı)</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>İstanbul ulaşımı + konaklama maliyeti</li>
+                <li>Sadece 10 saat — derinlik sınırlı</li>
+              </ul>
+            </div>
+            <a class="edu-link" href="https://itusem.itu.edu.tr" target="_blank" rel="noopener">itusem.itu.edu.tr →</a>
+          </div>
+
+          <div class="edu-card purple">
+            <div class="edu-head">
+              <div class="edu-title">İAÜ SEM + Kibele Projekt</div>
+              <div class="edu-meta">İstanbul Aydın Üniversitesi · 2019'dan beri</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">2 gün: 1 sınıf + 1 sera ziyareti</span></div>
+            <div class="edu-row"><span class="edu-row-label">Eğitmen</span><span class="edu-row-val">Ziraat Y. Müh. (Özşah Tesisi tecrübeli)</span></div>
+            <div class="edu-row"><span class="edu-row-label">Bonus</span><span class="edu-row-val">Örnek proje + fizibilite çalışması</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">Üniversite onaylı</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Çalışan ticari bir tesisi yerinde görme</li>
+                <li>Yatırımcı odaklı içerik — fizibilite vurgusu</li>
+                <li>Sera ulaşımı kurum tarafından sağlanıyor</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>İstanbul lokasyonu + 2 günlük zaman bloğu</li>
+                <li>Asenkron erişim yok</li>
+              </ul>
+            </div>
+            <a class="edu-link" href="https://sem.aydin.edu.tr/topraksiz-tarim-egitimi/" target="_blank" rel="noopener">sem.aydin.edu.tr →</a>
+          </div>
+
+          <div class="callout cg"><strong>İpucu:</strong> Birden fazla ücretsiz eğitimi paralel almak risk değil avantajdır. EGESEM (akademik temel) + İBB Kent Koleji (girişimcilik/satış) + Hidroponik Türkiye (pratik) kombinasyonu hiç para harcamadan tam pakettir.</div>
+        </div>
+
+        <!-- ────── ÖZEL ────── -->
+        <div id="tr-ozel" class="itab-section">
+
+          <div class="edu-card warn">
+            <div class="edu-head">
+              <div class="edu-title">Anadolu Eğitim Akademisi <span class="badge ba">Doğrulat</span></div>
+              <div class="edu-meta">Özel Anadolu Uzaktan Öğretim Kursu · Ankara · MEB Kod 99996998</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val">7.200 ₺ <span style="color:var(--text3);font-weight:400;">(+1.200 CardCert)</span></span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">5 hafta canlı + 1 yıl panel + 1 yıl video</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">MEB özel öğretim kurumu</span></div>
+            <div class="edu-row"><span class="edu-row-label">Hediye</span><span class="edu-row-val">1 offline eğitim seçeneği</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Canlı eğitim formatı — sınıf arkadaşı + soru sorma imkanı</li>
+                <li>Bonus: aronya, mantar, baharat bitkileri opsiyonu</li>
+                <li>MEB'e bağlı resmi özel kurum (kayıt doğrulanabilir)</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Aynı içerik EGESEM'de tamamen ücretsiz</li>
+                <li>CardCert 1.200 ₺ ek: hiçbir resmi karşılığı yok</li>
+                <li>"Sürekli indirim" söylemi pazarlama taktiği</li>
+                <li>Benzer kurumlarda panel kapatma şikayetleri var</li>
+              </ul>
+            </div>
+            <div class="edu-strategy">
+              <strong>Almadan önce yazılı garanti iste:</strong> (1) Sertifikanın hangi MEB modül adıyla e-Devlet'te göründüğü, (2) "5 hafta canlı"da net senkron oturum saati, (3) panel erişiminin tek taraflı kapatılmayacağı sözleşme maddesi. CardCert opsiyonunu reddet.
+            </div>
+            <a class="edu-link" href="https://www.anadoluegitimakademisi.com" target="_blank" rel="noopener">anadoluegitimakademisi.com →</a>
+          </div>
+
+          <div class="edu-card warn">
+            <div class="edu-head">
+              <div class="edu-title">Online Anka — 200 saatlik Topraksız Tarım Eğitimi</div>
+              <div class="edu-meta">Özel Yeni Anka Meslek Edindirme Kursu · MEB</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Süre</span><span class="edu-row-val">200 saat asenkron</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">Üniversite (Adıgüzel MYO)</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sınav geçer puan</span><span class="edu-row-val">55 / 100</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Uzun, kapsamlı içerik (200 saat)</li>
+                <li>Üniversite + MEB çift onay</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Geçer puan sadece 55 — değerlendirme zayıf</li>
+                <li>Fiyat şeffaflığı yok, danışmandan sormak zorunlu</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="edu-card warn">
+            <div class="edu-head">
+              <div class="edu-title">Eef Akademi · Tarımcan · Türkiye Eğitim Akademisi</div>
+              <div class="edu-meta">Online platformlar grubu</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret aralığı</span><span class="edu-row-val">~2.000–4.000 ₺</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">Asenkron · 1 yıl erişim</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">Üniversite onaylı + e-Devlet</span></div>
+            <div class="edu-row"><span class="edu-row-label">Bonus</span><span class="edu-row-val">Tarımcan: Ziraat kredi başvurusunda geçerli</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Anadolu Eğitim Akademisi'nden ~yarı fiyat</li>
+                <li>Ziraat tarım kredisi başvurularında belge olarak kabul</li>
+                <li>Kapsayıcı modüller (NFT, DWC, substrat)</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Aynı sertifika değeri EGESEM'de bedava</li>
+                <li>Eğitmen kalitesi platform → platform değişiyor</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="edu-card alt">
+            <div class="edu-head">
+              <div class="edu-title">Hidroponik Türkiye <span class="badge bb">Pratik altın</span></div>
+              <div class="edu-meta">Tedarikçi/üretici · YouTube + birebir destek · Çorlu</div>
+            </div>
+            <div class="edu-row"><span class="edu-row-label">Ücret</span><span class="edu-row-val g">Ücretsiz</span></div>
+            <div class="edu-row"><span class="edu-row-label">Format</span><span class="edu-row-val">YouTube + WhatsApp/telefon + kurulum</span></div>
+            <div class="edu-row"><span class="edu-row-label">Sertifika</span><span class="edu-row-val">Yok — pratik kurulum</span></div>
+            <div class="edu-row"><span class="edu-row-label">Değer</span><span class="edu-row-val">Sistem seçimi, kurulum, sorun giderme</span></div>
+            <div class="edu-section">
+              <div class="edu-section-label">Artıları</div>
+              <ul class="edu-pros">
+                <li>Sıfır maliyetli pratik bilgi kaynağı</li>
+                <li>Birebir teknik destek — sorununa özel cevap</li>
+                <li>Sektör Facebook grubuna erişim</li>
+              </ul>
+            </div>
+            <div class="edu-section">
+              <div class="edu-section-label">Eksileri</div>
+              <ul class="edu-cons">
+                <li>Yapılandırılmış müfredat değil — bilgi dağınık</li>
+                <li>Devlet desteği başvurusunda kullanılamaz</li>
+                <li>Tedarikçi olduğu için ürün önyargısı olabilir</li>
+              </ul>
+            </div>
+            <div class="edu-strategy">
+              <strong>GrowmiLab için kullanım:</strong> Zaten Hidroponikturkiye.com'dan alım yapıyorsun. YouTube kanalını sistematik izle, sorun yaşadığında WhatsApp desteğini kullan. Ücretsiz akademik eğitimi (EGESEM) tamamlayıcı olarak konumlandır.
+            </div>
+            <a class="edu-link" href="https://www.youtube.com/@hidroponikturkiye" target="_blank" rel="noopener">YouTube: Hidroponik Türkiye →</a>
+          </div>
+
+          <div class="callout ca"><strong>Genel uyarı:</strong> "Üniversite onaylı" / "uluslararası akreditasyon" / "e-Devlet sorgulanabilir" gibi söylemler Türkiye'de pazarlama klişesi haline geldi. Üç soruyu sormadan satın alma: hangi üniversite, hangi MEB modül adı, e-Devlet'te kim sorgulayabiliyor.</div>
+        </div>
+
+        <!-- ────── NETWORK & STRATEJİ ────── -->
+        <div id="tr-net" class="itab-section">
+
+          <div class="sc" style="border-left-color:var(--purple);">
+            <div class="sc-t">SERA-BİR Derneği <span class="badge bp">Ana network</span></div>
+            <p class="sc-d">Türkiye'nin önde gelen seracılık derneği. Modern Seracılık Zirvesi düzenliyor; "Topraksızda satış dinamikleri" gibi paneller. Alarko Tarım, Alsera, Palmira Agro gibi sektör devleri üye. <strong>Yıllık etkinlik:</strong> Modern Seracılık Zirvesi (Mart). <strong>Format:</strong> LinkedIn + sektör panelleri. <strong>Kullanım:</strong> Sistem satışı için B2B müşteri ağı, pazarlama / fiyatlandırma / ihracat panelleri.</p>
+          </div>
+
+          <div class="sc" style="border-left-color:var(--green);">
+            <div class="sc-t">GROWTECH Antalya <span class="badge bg">Yıllık zorunlu</span></div>
+            <p class="sc-d">Dünyanın en büyük örtüaltı tarım sektörü fuarı. 36 ülkeden 725 katılımcı, 135 ülkeden 38.634 ziyaretçi. Ziyaret ücretsiz. <strong>Tarih:</strong> 24-27 Kasım 2026. <strong>Yer:</strong> Antalya ANFAŞ Expo Center. <strong>Kullanım:</strong> Tedarikçi karşılaştırma, sistem fiyat keşfi, B2B alıcı, ihracat fırsatı, Tarım Sohbetleri konferansları.</p>
+          </div>
+
+          <div class="sc" style="border-left-color:var(--blue);">
+            <div class="sc-t">SERKONDER — Sera Üreticileri Derneği</div>
+            <p class="sc-d">Türkiye'nin sera üreticileri çatı kuruluşu. Yıllık 10.000 dekar yeni sera ihtiyacı verisini paylaşan, sektörel veri sağlayan dernek. <strong>Kullanım:</strong> Sektör veri kaynağı, üretici ağı, yatırım eğilimleri. Sektörün makro trendlerini ve ihtiyaç boşluklarını öğrenmek.</p>
+          </div>
+
+          <div class="sc" style="border-left-color:var(--amber);">
+            <div class="sc-t">LinkedIn Topraksız Tarım Profesyonelleri</div>
+            <p class="sc-d">Türkiye'de en aktif network kanalı. SERA-BİR, ziraat mühendisleri, sera yatırımcıları, restoran zincir alımcıları burada. <strong>Hedef gruplar:</strong> #topraksıztarım #hidroponik #verticalfarming etiketleri. <strong>Kullanım:</strong> İçerik üretimi (Kuleponic kurulum hikâyen → marka), uzman takip, B2B sıcak temas.</p>
+          </div>
+
+          <div class="sc" style="border-left-color:var(--green);">
+            <div class="sc-t">İzmir Yerel Network</div>
+            <p class="sc-d">İzmir Türkiye topraksız tarım üretiminin %9'una ev sahipliği yapıyor (4. il). Jeotermal seralarda yoğunlaşma var. Yerel ağ özellikle ürün satışı (restoran, kafe, organik pazar) için kritik. <strong>Bağlantılar:</strong> İZKA, Ege Üniv. Güneş Enstitüsü, Dikili Belediyesi tarım birimi, Bornova HEM. <strong>Yıllık fuar:</strong> AGROEXPO, IFWeek.</p>
+          </div>
+
+          <hr class="section-divider">
+
+          <div class="section-eyebrow" style="margin-bottom:6px;">Strateji</div>
+          <div class="section-title" style="font-size:18px;margin-bottom:6px;">Aşamalı yol haritası</div>
+          <div class="section-desc" style="margin-bottom:18px;">GrowmiLab için kişiselleştirilmiş 4 aşamalı plan — şu an Kuleponic kurulumdan ölçeklendirilmiş hibrit modele.</div>
+
+          <div class="card">
+            <div class="pi">
+              <div class="pi-num" style="background:var(--green-bg);color:var(--green);border-color:var(--green-dim);">1</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pi-t">Şimdi — Temel kurma <span class="badge bg">0–2 ay</span></div>
+                <p class="pi-d" style="margin-bottom:6px;">Sıfır maliyetli temel — eğitim + pratik kurulum eş zamanlı.</p>
+                <div class="row"><span class="rl">EGESEM topraksız tarım programına kayıt</span><span class="rv">Asenkron</span></div>
+                <div class="row"><span class="rl">Kuleponic kurulumunu tamamla, ilk fesleğen ekim</span><span class="rv">Pratik</span></div>
+                <div class="row"><span class="rl">Hidroponik Türkiye YouTube kanalı sistematik izle</span><span class="rv">Sürekli</span></div>
+                <div class="row"><span class="rl">İBB Kent Koleji + topraksiztarımizmir.org bilgi formu</span><span class="rv">Kayıt</span></div>
+                <div class="row"><span class="rl">LinkedIn topraksız tarım hashtag'lerini takibe al</span><span class="rv">Network</span></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num" style="background:var(--blue-bg);color:var(--blue);border-color:var(--blue-dim);">2</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pi-t">3–6 ay — Sertifika + iş planı <span class="badge bb">2–6 ay</span></div>
+                <p class="pi-d" style="margin-bottom:6px;">Resmi belge + ticari plan — devlet desteği başvurusuna hazırlık.</p>
+                <div class="row"><span class="rl">EGESEM sınavını ver, e-Devlet sertifikasını indir</span><span class="rv">Sertifika</span></div>
+                <div class="row"><span class="rl">İBB Kent Koleji programı — 24 sa fizibilite + 32 sa satıcılık</span><span class="rv">Beceri</span></div>
+                <div class="row"><span class="rl">ÇKS (Çiftçi Kayıt Sistemi) e-Devlet üzerinden başlat</span><span class="rv">Resmi</span></div>
+                <div class="row"><span class="rl">Vertifit 80 NFT araştırması, fizibiliteye ekle</span><span class="rv">Ar-Ge</span></div>
+                <div class="row"><span class="rl">SERA-BİR webinar düzenli izle — pazarlama notları</span><span class="rv">Network</span></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num" style="background:var(--purple-bg);color:var(--purple);border-color:var(--purple-dim);">3</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pi-t">6–12 ay — Network ve görünürlük <span class="badge bp">6–12 ay</span></div>
+                <p class="pi-d" style="margin-bottom:6px;">Sektörde isim duyurma + ilk B2B temaslar.</p>
+                <div class="row"><span class="rl">GROWTECH Antalya 2026 — ücretsiz ziyaretçi</span><span class="rv">24-27 Kasım</span></div>
+                <div class="row"><span class="rl">LinkedIn'de Kuleponic kurulum hikâyen — içerik</span><span class="rv">Marka</span></div>
+                <div class="row"><span class="rl">İzmir restoran/kafe haritası, taze fesleğen alımcı listesi</span><span class="rv">Satış</span></div>
+                <div class="row"><span class="rl">Modern Seracılık Zirvesi 2026 katılım</span><span class="rv">Mart</span></div>
+                <div class="row"><span class="rl">TKDK IPARD III veya Ziraat genç/kadın çiftçi başvurusu</span><span class="rv">Hibe</span></div>
+              </div>
+            </div>
+            <div class="pi">
+              <div class="pi-num" style="background:var(--amber-bg);color:var(--amber);border-color:var(--amber-dim);">4</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pi-t">12+ ay — Hibrit model ölçeklendirme <span class="badge ba">12+ ay</span></div>
+                <p class="pi-d" style="margin-bottom:6px;">Üretim + sistem satışı + showroom — gerçek iş modeli.</p>
+                <div class="row"><span class="rl">Vertifit 80 NFT veya kendi tasarımına geçiş</span><span class="rv">Ölçek</span></div>
+                <div class="row"><span class="rl">SERKONDER üyelik ve sektör verilerine erişim</span><span class="rv">Network</span></div>
+                <div class="row"><span class="rl">İlk dijital ürün (plan+BOM+eğitim) hazırla ve sat</span><span class="rv">Format B</span></div>
+                <div class="row"><span class="rl">Showroom günleri organize et — eğitim kurumlarına davet</span><span class="rv">Sinerji</span></div>
+                <div class="row"><span class="rl">İhracat odaklı GROWTECH stand katılımı değerlendir</span><span class="rv">İhracat</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout cb"><strong>Network kuralı:</strong> En değerli temas derneklerin yıllık olağan üye toplantıları ve fuar sonrası networking akşamlarında kuruluyor. Etkinlik öncesi LinkedIn'den ulaşıp "fuarda 15 dakika kahve" teklif et — soğuk satış değil, soğuk öğrenme yaklaşımı işe yarıyor.</div>
+
+          <div class="callout ca"><strong>Hatırlatma:</strong> Bu rehberdeki tüm fiyatlar, tarihler ve şartlar Nisan 2026 itibarıyladır. Kayıt yapmadan önce ilgili kurumun resmi web sitesinden güncel bilgiyi mutlaka doğrula. Devlet destek programları sıkça güncellenir; KOSGEB / TKDK / İZKA çağrılarını periyodik kontrol et.</div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="page-footer">growmilab · İzmir · 2025–2026</div>
+
   </div>
 </div>
 
 <script>
-const PASS       = 'Hayeldaş_2026';
+const PASS = 'Hayeldaş_2026';
 const ADMIN_PASS = 'Hayeldaş_2026';
-const STORE      = 'growmilab_v3';
+const STORE = 'growmilab_v3';
 
 const STEPS = [
   {id:'s1',week:'Hf 1',text:'Balkon sistemini devreye al — fesleğen + 1–2 yeşillik ekim',tag:'u'},
@@ -964,14 +1486,13 @@ function itab(prefix, name, btn){
 (function initTowerRotation() {
   const img = document.getElementById('tower-img');
   if (!img) return;
-
   let lastScrollY = window.scrollY;
   let rotationVelocity = 0;
   let currentRotation = 0;
-  const AUTO_SPEED = 0.08;       // constant slow rotation (deg/frame)
-  const SCROLL_FACTOR = 0.12;    // scroll delta -> rotation velocity
-  const DECAY = 0.93;            // velocity decay per frame
-  const MAX_VELOCITY = 8;        // cap sudden scrolls
+  const AUTO_SPEED = 0.08;
+  const SCROLL_FACTOR = 0.12;
+  const DECAY = 0.93;
+  const MAX_VELOCITY = 8;
 
   window.addEventListener('scroll', () => {
     const delta = window.scrollY - lastScrollY;
@@ -992,5 +1513,6 @@ function itab(prefix, name, btn){
   requestAnimationFrame(animate);
 })();
 </script>
+
 </body>
 </html>
